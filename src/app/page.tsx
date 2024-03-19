@@ -8,7 +8,7 @@ export default function Home() {
         <div className="flex flex-col lg:gap-4 gap-2 m-auto px-4 py-2">
           <p className="text-3xl">Hi ✋,</p>
           <div className="flex gap-2">
-            <p className="lg:text-5xl text-xl font-light content-end">I'm</p>
+            <p className="lg:text-5xl text-xl font-light content-end">I&apos;m</p>
             <p className="lg:text-6xl text-2xl font-medium">Raymond</p>
           </div>
           <p className="lg:text-6xl text-2xl font-bold cursor">
@@ -17,7 +17,7 @@ export default function Home() {
           <div className="flex flex-col lg:my-6 gap-2 my-1 lg:text-2xl text-xl">
             <span className="font-medium text-3xl text-red-600">{`{`}</span>
             <span className="max-w-96 lg:ml-8 ml-2 font-light">
-              I'm an
+              I&apos;m an
               <span className="mx-1 font-semibold">enthusiastic</span>
               programmer showing my skills and projects.
             </span>
@@ -27,7 +27,7 @@ export default function Home() {
             <span className="text-red-600 underline underline-offset-4 decoration-4 decoration-red-600 mr-1">
               Explore my work
             </span>
-            and let's innovate together.
+            and let&apos;s innovate together.
           </p>
         </div>
       </div>
