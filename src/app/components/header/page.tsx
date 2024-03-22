@@ -1,48 +1,54 @@
 import Image from "next/image";
-import Link from "next/link";
+import SmoothScrollLink from "./smoothScrollLink";
+import { poppins } from "@/app/fonts";
 
 export default function Header() {
   return (
-    <header className="flex flex-col lg:flex-row bg-white/70 backdrop-blur-md z-20 sticky top-0 items-center lg:justify-between p-4">
-      <div className="flex gap-2">
-        <Image src="images/logo.svg" alt="Logo" width={55} height={55} />
+    <header className="flex flex-col bg-[#161719]/80 lg:flex-row backdrop-blur-md z-20 sticky top-0 items-center lg:justify-around p-4">
+      <a href="#home" className="flex gap-2">
+        <Image src="images/logo-light.svg" alt="Logo" width={40} height={40} />
         <div className="flex flex-col content-center m-auto">
-          <p className="text-lg font-medium leading-6">
+          <p className="text-sm font-medium leading-4">
             Raymond Negron
           </p>
-          <p className="font-extralight text-sm leading-4">
+          <p className="font-extralight text-xs leading-3">
             Software Developer
           </p>
         </div>
-      </div>
+      </a>
       <nav>
-        <ul className="flex flex-row lg:gap-8 gap-4 py-2 mx-6 text-black font-extralight text-xl">
-          <li>
-              <Link href="/" className="group transition-all duration-300 ease-in-out">
-                <span className="bg-left-bottom bg-gradient-to-r from-green-500 to-green-500 bg-[length:0%_4px] bg-no-repeat group-hover:bg-[length:100%_4px] transition-all duration-500 ease-out">
+        <ul className={`flex flex-row ${poppins.className} lg:gap-8 gap-4 py-2 mx-6 font-extralight text-sm`}>
+          <li className="group transition-all duration-300 ease-in-out">
+              <SmoothScrollLink href="#home" >
+                <span className="bg-left-bottom bg-gradient-to-r from-orange-500 to-orange-500 bg-[length:0%_4px] bg-no-repeat group-hover:bg-[length:100%_4px] transition-all duration-500 ease-out">
                   Home
+                  <span className="text-orange-500 font-semibold">.html</span>
+                </span>
+              </SmoothScrollLink>
+          </li>
+          <li className="group transition-all duration-300 ease-in-out">
+              <SmoothScrollLink href="#experience" >
+                <span className="bg-left-bottom bg-gradient-to-r from-green-500 to-green-500 bg-[length:0%_4px] bg-no-repeat group-hover:bg-[length:100%_4px] transition-all duration-500 ease-out">
+                  Experience
                   <span className="text-green-600 font-semibold">.py</span>
                 </span>
-              </Link>
+              </SmoothScrollLink>
           </li>
-          <li>
-              <Link href="/" className="group transition-all duration-300 ease-in-out">
+          <li className="group transition-all duration-300 ease-in-out">
+              <SmoothScrollLink href="#projects">
                 <span className="bg-left-bottom bg-gradient-to-r from-yellow-500 to-yellow-500 bg-[length:0%_4px] bg-no-repeat group-hover:bg-[length:100%_4px] transition-all duration-500 ease-out">
                   Projects
                   <span className="text-yellow-400 font-semibold">.js</span>
                 </span>
-              </Link>
+              </SmoothScrollLink>
           </li>
-          <li>
-              <Link href="/" className="group transition-all duration-300 ease-in-out">
+          <li className="group transition-all duration-300 ease-in-out">
+              <SmoothScrollLink href="#skills">
                 <span className="bg-left-bottom bg-gradient-to-r from-blue-500 to-blue-500 bg-[length:0%_4px] bg-no-repeat group-hover:bg-[length:100%_4px] transition-all duration-500 ease-out">
-                  Blog
+                  Skills
                   <span className="text-blue-500 font-semibold">.ts</span>
                 </span>
-              </Link>
-          </li>
-          <li>
-              <Link href="/">Contact</Link>
+              </SmoothScrollLink>
           </li>
         </ul>
       </nav>

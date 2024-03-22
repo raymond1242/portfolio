@@ -10,7 +10,17 @@
 
 
 body {
-  background-color: #d1d5db;
+  /* background-color: #1c1d1e; */
+  background-color: #161719;
+  color: #fff;
+}
+
+.border-extralight {
+  border: .7px solid #616161;
+}
+
+.border-light {
+  border: 1px solid #616161;
 }
 
 .cursor {
@@ -22,13 +32,12 @@ body {
   animation: blink-caret 1s step-end infinite;
 }
 
-
 @keyframes blink-caret {
   from,
   to {
     border-color: transparent;
   }
   50% {
-    border-color: black;
+    border-color: white;
   }
 }

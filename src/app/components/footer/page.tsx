@@ -1,15 +1,15 @@
 import Image from "next/image";
-import { roboto, dosis } from "@/app/fonts";
+import { dosis } from "@/app/fonts";
 import { LinkedinFilled, GithubFilled, XOutlined } from '@ant-design/icons';
 
 export default function Footer() {
   return (
-    <footer className="flex bg-gray-300 text-black p-6 justify-between">
-      <div>
-        <Image className="my-1" src="images/logo.svg" alt="Logo" width={80} height={80} />
-        <p className="">
-          Site by&nbsp;
-          <span className={`${dosis.className} text-3xl font-semibold`}>
+    <footer className="flex bg-[#161719] p-6 justify-between">
+      <div className="my-auto">
+        <Image src="images/logo-light.svg" alt="Logo" width={50} height={50} />
+        <p className="ml-1.5">
+          Made by&nbsp;
+          <span className={`${dosis.className} text-xl font-semibold`}>
             Raymond
           </span>
         </p>
