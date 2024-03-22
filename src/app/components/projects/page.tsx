@@ -9,7 +9,7 @@ export default function Projects () {
       link: "/projects/photo-gallery",
       image: "/images/projects/todo.png",
       github: "https://github.com/raymond1242/todo-list",
-      status: "in-progress"
+      tecnologies: ["React", "TypeScript", "Node.js", "MongoDB"],
     },
     {
       name: "Todo List",
@@ -17,7 +17,7 @@ export default function Projects () {
       link: "/projects/todo-list",
       image: "/images/projects/todo-list-app.png",
       github: "https://github.com/raymond1242/todo-list",
-      status: "in-progress"
+      tecnologies: ["React", "TypeScript", "Node.js", "MongoDB"],
     },
     {
       name: "Weather App",
@@ -25,15 +25,18 @@ export default function Projects () {
       link: "/projects/weather-app",
       image: "/images/projects/todo-list.png",
       github: "https://github.com/raymond1242/todo-list",
-      status: "in-progress"
+      tecnologies: ["React", "TypeScript", "Node.js", "MongoDB"],
     }
   ]
 
   return (
-    <div className="bg-gradient-to-b from-gray-300 to-gray-100 px-6 py-8 lg:py-14">
+    <section id="projects" className="px-6 py-8 lg:py-14">
       <h1 className="lg:text-7xl text-4xl text-red-500 text-center pb-4 lg:mb-6">
         &lt;
-        <span className="text-black">My projects</span>
+        <span className="text-white font-medium">
+          PROJEC
+          <span className="font-light text-5xl">.ts</span>
+        </span>
         /&gt;
       </h1>
       <div className="flex flex-col">
@@ -46,10 +49,10 @@ export default function Projects () {
               src={project.image}
               alt={project.name}
               className={`m-auto rounded-2xl ${index % 2 === 0 ? "lg:order-last z-0" : ""}`}
-              width={540}
+              width={500}
               height={450}
             />
-            <div className="bg-gray-100/90 flex flex-col lg:max-w-96 gap-3 z-10 my-auto lg:-mx-8 p-5 rounded-lg">
+            <div className="bg-neutral-700/95 flex flex-col lg:max-w-96 gap-3 z-10 my-auto lg:-mx-8 p-5 rounded-xl">
               <div className="flex gap-1">
                 <a
                   href={project.link}
@@ -63,17 +66,27 @@ export default function Projects () {
               <a
                 href={project.github}
                 target="_blank"
-                className="flex border-2 py-1 px-2 border-black rounded-lg gap-1.5 w-fit"
+                className="flex border-light hover:bg-neutral-600 font-light text-xs py-1 px-1.5 border-white rounded-lg gap-1.5 w-fit"
               >
-                <GithubFilled className="flex m-auto mb-1 text-3xl"/>
+                <GithubFilled className="flex m-auto mb-1 text-xl"/>
                 <p className="m-auto mt-1">
-                  View on Github
+                  Source code
                 </p>
               </a>
+              <div>
+                {project.tecnologies.map((tecnology, index) => (
+                  <span
+                    key={index}
+                    className="bg-neutral-700/90 text-xs px-2 py-1 rounded-lg"
+                  >
+                    {tecnology}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }

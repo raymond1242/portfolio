@@ -2,11 +2,11 @@ import Image from "next/image"
 
 export default function Skills () {
   return (
-    <div className="flex flex-col lg:grid lg:grid-cols-5 px-6 lg:py-14 py-8 bg-gray-300">
+    <section id="skills" className="flex flex-col lg:grid lg:grid-cols-5 px-6 py-8 lg:py-14">
       <div className="flex col-span-2 p-4">
         <p className="m-auto lg:text-7xl text-5xl p-4 font-medium text-red-500">
           {"{ "}
-          <span className="text-black">SKILLS</span>
+          <span className="text-white">SKILLS</span>
           {" }"}
         </p>
       </div>
@@ -92,6 +92,6 @@ export default function Skills () {
           />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
