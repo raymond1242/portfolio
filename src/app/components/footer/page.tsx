@@ -5,7 +5,7 @@ import { LinkedinFilled, GithubFilled, XOutlined } from '@ant-design/icons';
 
 export default function Footer() {
   return (
-    <footer className="flex lg:flex-row flex-col bg-[#161719] p-6 lg:py-12 gap-6 justify-between">
+    <footer className="flex lg:flex-row flex-col bg-[#161719] py-6 px-10 lg:py-12 gap-6 justify-between">
       <div className="flex flex-col my-auto gap-3 lg:order-first order-3">
         <Image src="images/logo-light.svg" alt="Logo" className="-ml-1.5" width={70} height={70} />
         <p className="text-neutral-400">
@@ -40,20 +40,15 @@ export default function Footer() {
         </div>
         <div className='flex flex-col gap-4'>
           <p className="font-semibold text-xl">PROJECTS</p>
-          <ul className="flex flex-col gap-3 font-extralight text-md text-neutral-300">
+          <ul className="flex flex-col gap-3 font-light text-lg text-neutral-300">
             <li>
               <a href="/">
-                Photo Gallery
+                Somer
               </a>
             </li>
             <li>
               <a href="/">
-                Todo List
-              </a>
-            </li>
-            <li>
-              <a href="/">
-                Weather App
+                Collyn
               </a>
             </li>
           </ul>

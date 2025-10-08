@@ -10,11 +10,11 @@ export default function Home() {
     <main id="home">
       <Header />
       <section className="flex px-6 lg:py-14 py-8">
-        <div className="flex flex-col lg:gap-4 gap-2 m-auto px-4 py-2">
+        <div className="flex flex-col lg:gap-5 gap-3 m-auto px-4 py-2">
           <p className="text-3xl">Hi ✋,</p>
-          <div className="flex gap-2">
-            <p className="lg:text-5xl text-xl font-light content-end">I&apos;m</p>
-            <p className="lg:text-6xl text-2xl font-medium">Raymond,</p>
+          <div className="flex gap-4">
+            <p className="lg:text-4xl text-xl font-light content-end">I&apos;m</p>
+            <p className="lg:text-5xl text-2xl font-semibold text-neutral-500">Raymond,</p>
           </div>
           <p className={`${poppins.className} lg:text-6xl text-2xl font-bold cursor`}>
             SOFTWARE DEVELOPER.

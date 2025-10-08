@@ -58,27 +58,27 @@ export default function Experience () {
           {" }"}
         </p>
       </div>
-      <div className="flex flex-col lg:gap-6 gap-4 m-auto">
+      <div className="flex flex-col lg:gap-10 gap-6 m-auto">
         {experiences.map((experience, index) => (
-          <div key={index} className="flex flex-col lg:flex-row gap-4">
+          <div key={index} className="flex flex-col lg:flex-row gap-6">
             <Image
-              className="hover:scale-105 transition-all duration-400 ease-in-out rounded-xl"
+              className="hover:scale-105 transition-all duration-400 ease-in-out rounded-xl border-2 border-white"
               src={experience.image}
               alt="ArkRisk"
               width={540}
-              height={180}
+              height={160}
             />
             <div className="flex flex-col lg:gap-5 gap-4 m-auto p-2 max-w-[500px]">
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between">
-                  <p className="text-3xl font-medium">{experience.company}</p>
+                  <p className="text-2xl font-bold text-neutral-500">{experience.company}</p>
                   {experience.tag && (
                     <span className=" border-light px-2 py-1 text-sm font-extralight h-fit rounded-lg">
                       {experience.tag}
                     </span>
                   )}
                 </div>
-                <p className="text-2xl">{experience.role}</p>
+                <p className="text-3xl font-light">{experience.role}</p>
               </div>
               <div className="flex justify-between">
                 <div className="flex gap-1">

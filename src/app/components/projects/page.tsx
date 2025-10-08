@@ -4,28 +4,22 @@ import { GithubFilled, LinkOutlined } from "@ant-design/icons"
 export default function Projects () {
   const projects = [
     {
-      name: "Photo Gallery",
-      description: "A photo gallery app that allows users to upload and share their photos.",
-      link: "/projects/photo-gallery",
-      image: "/images/projects/todo.png",
-      github: "https://github.com/raymond1242/todo-list",
-      tecnologies: ["React", "TypeScript", "Node.js", "MongoDB"],
-    },
-    {
-      name: "Todo List",
+      name: "Somer",
+      subtitle: "Stock Management System",
       description: "A simple todo list app that allows users to add, edit, and delete tasks.",
-      link: "/projects/todo-list",
-      image: "/images/projects/todo-list-app.png",
-      github: "https://github.com/raymond1242/todo-list",
-      tecnologies: ["React", "TypeScript", "Node.js", "MongoDB"],
+      link: "https://www.somer.lat",
+      image: "/images/projects/somer.png",
+      github: "https://github.com/raymond1242/somer-web",
+      tecnologies: ["React", "TypeScript", "Django", "PostgreSQL"],
     },
     {
-      name: "Weather App",
+      name: "Collyn",
+      subtitle: "Order Management System",
       description: "A weather app that allows users to check the weather in their location.",
-      link: "/projects/weather-app",
-      image: "/images/projects/todo-list.png",
-      github: "https://github.com/raymond1242/todo-list",
-      tecnologies: ["React", "TypeScript", "Node.js", "MongoDB"],
+      link: "https://collyn.vercel.app",
+      image: "/images/projects/collyn.png",
+      github: "https://github.com/raymond1242/collyn-web",
+      tecnologies: ["React", "TypeScript", "Django", "PostgreSQL"],
     }
   ]
 
@@ -43,25 +37,27 @@ export default function Projects () {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="lg:flex grid m-auto gap-3 p-4 rounded-md"
+            className="lg:flex grid m-auto gap-6 p-4 rounded-md"
           >
             <Image
               src={project.image}
               alt={project.name}
-              className={`m-auto rounded-2xl ${index % 2 === 0 ? "lg:order-last z-0" : ""}`}
-              width={500}
+              className={`m-auto rounded-2xl border-2 border-white ${index % 2 === 0 ? "lg:order-last z-0" : ""}`}
+              width={680}
               height={450}
             />
-            <div className="bg-neutral-700/95 flex flex-col lg:max-w-96 gap-3 z-10 my-auto lg:-mx-8 p-5 rounded-xl">
+            <div className="flex flex-col lg:max-w-96 gap-3 z-10 my-auto lg:-mx-4 p-5">
               <div className="flex gap-1">
                 <a
                   href={project.link}
+                  target="_blank"
                   className="flex gap-1 text-blue-500" 
                 >
-                  <LinkOutlined className="flex m-auto mb-1 text-4xl"/>
+                  <LinkOutlined className="flex m-auto mb-1 text-3xl"/>
                 </a>
-                <p className="text-3xl font-medium my-auto">{project.name}</p>
+                <p className="text-3xl text-neutral-400 font-semibold my-auto">{project.name}</p>
               </div>
+              <p className="text-xl font-light">{project.subtitle}</p>
               <p className="text-md font-light my-1">{project.description}</p>
               <a
                 href={project.github}
@@ -73,7 +69,7 @@ export default function Projects () {
                   Source code
                 </p>
               </a>
-              <div>
+              <div className="flex gap-2 mt-2">
                 {project.tecnologies.map((tecnology, index) => (
                   <span
                     key={index}
