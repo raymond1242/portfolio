@@ -14,20 +14,18 @@ export default function Home() {
           <p className="text-3xl">Hi ✋,</p>
           <div className="flex gap-2">
             <p className="lg:text-5xl text-xl font-light content-end">I&apos;m</p>
-            <p className="lg:text-6xl text-2xl font-medium">Raymond</p>
+            <p className="lg:text-6xl text-2xl font-medium">Raymond,</p>
           </div>
           <p className={`${poppins.className} lg:text-6xl text-2xl font-bold cursor`}>
             SOFTWARE DEVELOPER.
           </p>
           <div className="flex flex-col lg:my-6 gap-2 my-1 text-xl">
             <span className="font-medium text-3xl text-red-600">{`{`}</span>
-            <p className="max-w-[550px] [&_span]:font-semibold lg:ml-8 ml-2 font-extralight">
-              Focused on creating innovative and
-              <span> efficient solutions </span>
-              that address
-              <span> complex challenges. </span>
-              Comfortable collaborating in multidisciplinary teams, have a strong commitment to
-              <span> continuous learning</span>.
+            <p className="max-w-[650px] [&_span]:font-semibold lg:ml-8 ml-2 font-extralight">
+              Skilled in building <span>scalable</span> microservices
+              architectures using <span>Node.js, Python, and AWS</span>, with expertise in database integrations and <span>real-time communication systems</span>.
+              Adept at collaborating in cross-functional teams and passionate about delivering <span>innovative and efficient</span>
+              solutions.
             </p>
             <span className="font-medium text-3xl text-red-600">{`}`}</span>
           </div>
