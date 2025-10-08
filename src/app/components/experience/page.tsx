@@ -14,10 +14,6 @@ export default function Experience () {
         "Contributed to the end-to-end development of backend applications using Node.js and the NestJS framework, building a scalable",
         "microservices architecture from scratch. Designed and optimized database integrations with Postgres (via Prisma ORM) and",
         "DynamoDB, while implementing real-time communication through AWS Lambda and WebSocket APIs. Ensured secure access and user management by integrating AWS Cognito authentication across services"
-        
-        // "Led design and development phase adhered to best practices and standards, collaborating closely with stakeholders.",
-        // "Implemented performance optimization techniques, such as parallelism ensuring high responsiveness making the process 60% faster.",
-        // "Demonstrated expertise in troubleshooting and debugging issues, implementing effective error handling mechanisms and logging strategies."
       ],
       tecnologies: ["Node.js", "NestJS", "Docker", "PostgreSQL", "Flask"],
     },
