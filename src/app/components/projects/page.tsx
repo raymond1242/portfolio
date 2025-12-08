@@ -24,56 +24,55 @@ export default function Projects () {
   ]
 
   return (
-    <section id="projects" className="px-6 py-8 lg:py-14">
-      <h1 className="lg:text-7xl text-4xl text-red-500 text-center pb-4 lg:mb-6">
+    <section id="projects" className="px-6 py-12 lg:py-16">
+      <h2 className="lg:text-7xl text-5xl text-red-500 text-center pb-8 lg:mb-8">
         &lt;
         <span className="text-white font-medium">
           PROJEC
           <span className="font-light text-5xl">.ts</span>
         </span>
         /&gt;
-      </h1>
-      <div className="flex flex-col">
+      </h2>
+      <div className="flex flex-col gap-12 lg:gap-16 max-w-7xl m-auto">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="lg:flex grid m-auto gap-6 p-4 rounded-md"
+            className="lg:flex grid m-auto gap-8 lg:gap-10 p-4 rounded-md"
           >
             <Image
               src={project.image}
               alt={project.name}
-              className={`m-auto rounded-2xl border-2 border-white ${index % 2 === 0 ? "lg:order-last z-0" : ""}`}
+              className={`m-auto rounded-2xl border-2 border-neutral-700 hover:border-neutral-600 shadow-lg transition-all duration-300 hover:scale-[1.02] ${index % 2 === 0 ? "lg:order-last z-0" : ""}`}
               width={680}
               height={450}
             />
-            <div className="flex flex-col lg:max-w-96 gap-3 z-10 my-auto lg:-mx-4 p-5">
-              <div className="flex gap-1">
+            <div className="flex flex-col lg:max-w-96 gap-4 z-10 my-auto lg:-mx-4 p-5 bg-neutral-900/50 rounded-xl backdrop-blur-sm">
+              <div className="flex gap-3 items-center">
                 <a
                   href={project.link}
                   target="_blank"
-                  className="flex gap-1 text-blue-500" 
+                  className="flex text-blue-500 hover:text-blue-400 transition-colors"
+                  aria-label={`Visit ${project.name}`}
                 >
-                  <LinkOutlined className="flex m-auto mb-1 text-3xl"/>
+                  <LinkOutlined className="text-3xl" />
                 </a>
-                <p className="text-3xl text-neutral-400 font-semibold my-auto">{project.name}</p>
+                <h3 className="text-3xl text-neutral-400 font-semibold">{project.name}</h3>
               </div>
-              <p className="text-xl font-light">{project.subtitle}</p>
-              <p className="text-md font-light my-1">{project.description}</p>
+              <p className="text-xl font-light text-neutral-300">{project.subtitle}</p>
+              <p className="text-sm font-light leading-relaxed">{project.description}</p>
               <a
                 href={project.github}
                 target="_blank"
-                className="flex border-light hover:bg-neutral-600 font-light text-xs py-1 px-1.5 border-white rounded-lg gap-1.5 w-fit"
+                className="flex items-center border border-neutral-700 hover:bg-neutral-600 hover:border-neutral-600 font-light text-sm py-2 px-3 rounded-lg gap-2 w-fit transition-all duration-300"
               >
-                <GithubFilled className="flex m-auto mb-1 text-xl"/>
-                <p className="m-auto mt-1">
-                  Source code
-                </p>
+                <GithubFilled className="text-xl" />
+                <span>Source code</span>
               </a>
-              <div className="flex gap-2 mt-2">
+              <div className="flex flex-wrap gap-2 mt-2">
                 {project.tecnologies.map((tecnology, index) => (
                   <span
                     key={index}
-                    className="bg-neutral-700/90 text-xs px-2 py-1 rounded-lg"
+                    className="bg-neutral-700/90 text-xs px-3 py-1.5 rounded-lg font-medium"
                   >
                     {tecnology}
                   </span>

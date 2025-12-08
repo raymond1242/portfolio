@@ -47,59 +47,59 @@ export default function Experience () {
   ]
 
   return (
-    <section id="experience" className="flex flex-col px-6 py-8">
-      <div className="flex col-span-2 p-4">
-        <p className="m-auto lg:text-7xl text-5xl p-4 font-medium text-red-500">
+    <section id="experience" className="flex flex-col px-6 py-12 lg:py-16">
+      <div className="flex col-span-2 p-4 mb-4">
+        <h2 className="m-auto lg:text-7xl text-5xl p-4 font-medium text-red-500">
           {"{ "}
           <span className="text-white">
             EXP
             <span className="font-light text-5xl">erience</span>
           </span>
           {" }"}
-        </p>
+        </h2>
       </div>
-      <div className="flex flex-col lg:gap-10 gap-6 m-auto">
+      <div className="flex flex-col lg:gap-12 gap-8 m-auto max-w-6xl">
         {experiences.map((experience, index) => (
-          <div key={index} className="flex flex-col lg:flex-row gap-6">
+          <div key={index} className="flex flex-col lg:flex-row gap-6 lg:gap-8">
             <Image
-              className="hover:scale-105 transition-all duration-400 ease-in-out rounded-xl border-2 border-white"
+              className="hover:scale-105 transition-all duration-300 ease-in-out rounded-xl border-2 border-neutral-700 hover:border-neutral-600 shadow-lg"
               src={experience.image}
-              alt="ArkRisk"
+              alt={experience.company}
               width={540}
               height={160}
             />
-            <div className="flex flex-col lg:gap-5 gap-4 m-auto p-2 max-w-[500px]">
+            <div className="flex flex-col lg:gap-5 gap-4 m-auto p-2 max-w-[540px]">
               <div className="flex flex-col gap-2">
-                <div className="flex justify-between">
-                  <p className="text-2xl font-bold text-neutral-500">{experience.company}</p>
+                <div className="flex justify-between items-start">
+                  <h3 className="text-2xl font-semibold text-neutral-400">{experience.company}</h3>
                   {experience.tag && (
-                    <span className=" border-light px-2 py-1 text-sm font-extralight h-fit rounded-lg">
+                    <span className="border border-neutral-700 px-3 py-1 text-sm font-light h-fit rounded-lg bg-neutral-800/50">
                       {experience.tag}
                     </span>
                   )}
                 </div>
-                <p className="text-3xl font-light">{experience.role}</p>
+                <p className="text-2xl lg:text-3xl font-light">{experience.role}</p>
               </div>
-              <div className="flex justify-between">
-                <div className="flex gap-1">
-                  <CalendarOutlined className="text-blue-500"/>
-                  <p className=" font-extralight text-xs">{experience.date}</p>
+              <div className="flex justify-between items-center text-sm">
+                <div className="flex gap-2 items-center">
+                  <CalendarOutlined className="text-blue-500" />
+                  <span className="font-light">{experience.date}</span>
                 </div>
-                <div className="flex gap-1">
-                  <EnvironmentOutlined className="text-red-500"/>
-                  <p className="my-auto font-extralight italic text-xs">{experience.location}</p>
+                <div className="flex gap-2 items-center">
+                  <EnvironmentOutlined className="text-red-500" />
+                  <span className="font-light italic">{experience.location}</span>
                 </div>
               </div>
-              <ul className="flex flex-col gap-2 text-[14px] font-extralight">
+              <ul className="flex flex-col gap-3 text-sm font-light leading-relaxed list-disc list-inside">
                 {experience.accomplishments.map((accomplishment, index) => (
-                  <li key={index}>
-                    <p>{accomplishment}</p>
+                  <li key={index} className="pl-2">
+                    {accomplishment}
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-wrap gap-2 text-xs">
+              <div className="flex flex-wrap gap-2 text-xs mt-2">
                 {experience.tecnologies.map((technology, index) => (
-                  <span key={index} className="bg-neutral-700/90 px-2 py-1 rounded-lg">
+                  <span key={index} className="bg-neutral-700/90 px-3 py-1.5 rounded-lg font-medium">
                     {technology}
                   </span>
                 ))}
