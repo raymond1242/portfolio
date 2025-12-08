@@ -24,8 +24,9 @@ export default function Projects () {
   ]
 
   return (
-    <section id="projects" className="px-6 py-12 lg:py-16">
-      <h2 className="lg:text-7xl text-5xl text-red-500 text-center pb-8 lg:mb-8">
+    <section id="projects" className="px-6 py-16 lg:py-20 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/5 to-transparent pointer-events-none" />
+      <h2 className="lg:text-7xl text-5xl text-red-500 glow-text text-center pb-10 lg:mb-10">
         &lt;
         <span className="text-white font-medium">
           PROJEC
@@ -33,37 +34,40 @@ export default function Projects () {
         </span>
         /&gt;
       </h2>
-      <div className="flex flex-col gap-12 lg:gap-16 max-w-7xl m-auto">
+      <div className="flex flex-col gap-16 lg:gap-20 max-w-7xl m-auto relative z-10">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="lg:flex grid m-auto gap-8 lg:gap-10 p-4 rounded-md"
+            className="group lg:flex grid m-auto gap-8 lg:gap-10 p-6 lg:p-8 rounded-2xl"
           >
-            <Image
-              src={project.image}
-              alt={project.name}
-              className={`m-auto rounded-2xl border-2 border-neutral-700 hover:border-neutral-600 shadow-lg transition-all duration-300 hover:scale-[1.02] ${index % 2 === 0 ? "lg:order-last z-0" : ""}`}
-              width={680}
-              height={450}
-            />
-            <div className="flex flex-col lg:max-w-96 gap-4 z-10 my-auto lg:-mx-4 p-5 bg-neutral-900/50 rounded-xl backdrop-blur-sm">
+            <div className={`relative overflow-hidden rounded-2xl ${index % 2 === 0 ? "lg:order-last" : ""}`}>
+              <Image
+                src={project.image}
+                alt={project.name}
+                className="m-auto rounded-2xl border-2 border-neutral-800/60 group-hover:border-blue-900/40 shadow-2xl transition-all duration-500 group-hover:scale-[1.03] group-hover:shadow-blue-950/30"
+                width={680}
+                height={450}
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-950/20 via-transparent to-red-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+            <div className="flex flex-col lg:max-w-96 gap-5 z-10 my-auto lg:-mx-6 p-6 lg:p-8 bg-gradient-to-br from-neutral-900/80 to-neutral-950/80 rounded-2xl backdrop-blur-md border border-neutral-800/50 group-hover:border-neutral-700/80 transition-all duration-500 shadow-xl group-hover:shadow-2xl group-hover:shadow-blue-950/20">
               <div className="flex gap-3 items-center">
                 <a
                   href={project.link}
                   target="_blank"
-                  className="flex text-blue-500 hover:text-blue-400 transition-colors"
+                  className="flex text-blue-400 hover:text-blue-300 transition-colors p-2 rounded-lg hover:bg-blue-950/30 glow-text-subtle"
                   aria-label={`Visit ${project.name}`}
                 >
                   <LinkOutlined className="text-3xl" />
                 </a>
-                <h3 className="text-3xl text-neutral-400 font-semibold">{project.name}</h3>
+                <h3 className="text-3xl bg-gradient-to-r from-neutral-200 to-neutral-400 bg-clip-text text-transparent font-semibold">{project.name}</h3>
               </div>
-              <p className="text-xl font-light text-neutral-300">{project.subtitle}</p>
-              <p className="text-sm font-light leading-relaxed">{project.description}</p>
+              <p className="text-xl font-light text-red-400 glow-text-subtle">{project.subtitle}</p>
+              <p className="text-sm font-light leading-relaxed text-neutral-400">{project.description}</p>
               <a
                 href={project.github}
                 target="_blank"
-                className="flex items-center border border-neutral-700 hover:bg-neutral-600 hover:border-neutral-600 font-light text-sm py-2 px-3 rounded-lg gap-2 w-fit transition-all duration-300"
+                className="flex items-center border border-neutral-700/80 hover:bg-neutral-800/50 hover:border-neutral-600 bg-neutral-900/50 font-light text-sm py-2.5 px-4 rounded-lg gap-2 w-fit transition-all duration-300 shadow-md hover:shadow-lg text-neutral-300"
               >
                 <GithubFilled className="text-xl" />
                 <span>Source code</span>
@@ -72,7 +76,7 @@ export default function Projects () {
                 {project.tecnologies.map((tecnology, index) => (
                   <span
                     key={index}
-                    className="bg-neutral-700/90 text-xs px-3 py-1.5 rounded-lg font-medium"
+                    className="bg-gradient-to-r from-neutral-800/90 to-neutral-900/90 text-xs px-3 py-1.5 rounded-lg font-medium border border-neutral-700/50 text-neutral-300 hover:border-blue-900/50 transition-all duration-300"
                   >
                     {tecnology}
                   </span>

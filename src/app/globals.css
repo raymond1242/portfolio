@@ -41,3 +41,30 @@ body {
     border-color: white;
   }
 }
+
+/* Glow text effects */
+.glow-text {
+  text-shadow: 0 0 20px rgba(239, 68, 68, 0.3),
+               0 0 30px rgba(239, 68, 68, 0.2);
+}
+
+.glow-text-subtle {
+  text-shadow: 0 0 15px rgba(248, 113, 113, 0.2),
+               0 0 25px rgba(248, 113, 113, 0.1);
+}
+
+/* Fade in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}

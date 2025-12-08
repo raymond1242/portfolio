@@ -47,9 +47,10 @@ export default function Experience () {
   ]
 
   return (
-    <section id="experience" className="flex flex-col px-6 py-12 lg:py-16">
-      <div className="flex col-span-2 p-4 mb-4">
-        <h2 className="m-auto lg:text-7xl text-5xl p-4 font-medium text-red-500">
+    <section id="experience" className="flex flex-col px-6 py-16 lg:py-20 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-950/5 to-transparent pointer-events-none" />
+      <div className="flex col-span-2 p-4 mb-8">
+        <h2 className="m-auto lg:text-7xl text-5xl p-4 font-medium text-red-500 glow-text">
           {"{ "}
           <span className="text-white">
             EXP
@@ -58,39 +59,42 @@ export default function Experience () {
           {" }"}
         </h2>
       </div>
-      <div className="flex flex-col lg:gap-12 gap-8 m-auto max-w-6xl">
+      <div className="flex flex-col lg:gap-14 gap-10 m-auto max-w-6xl relative z-10">
         {experiences.map((experience, index) => (
-          <div key={index} className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-            <Image
-              className="hover:scale-105 transition-all duration-300 ease-in-out rounded-xl border-2 border-neutral-700 hover:border-neutral-600 shadow-lg"
-              src={experience.image}
-              alt={experience.company}
-              width={540}
-              height={160}
-            />
-            <div className="flex flex-col lg:gap-5 gap-4 m-auto p-2 max-w-[540px]">
+          <div key={index} className="group flex flex-col lg:flex-row gap-6 lg:gap-8 p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-neutral-900/40 to-neutral-950/40 border border-neutral-800/50 hover:border-neutral-700/80 transition-all duration-500 hover:shadow-2xl hover:shadow-red-950/20 backdrop-blur-sm">
+            <div className="relative my-auto overflow-hidden rounded-xl flex-shrink-0 self-center lg:self-start">
+              <Image
+                className="transition-all duration-500 ease-out rounded-xl border-2 border-neutral-800/60 group-hover:border-red-900/40 shadow-lg group-hover:scale-105 group-hover:shadow-red-950/30"
+                src={experience.image}
+                alt={experience.company}
+                width={540}
+                height={160}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+            <div className="flex flex-col lg:gap-5 gap-4 p-2 max-w-[540px]">
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between items-start">
-                  <h3 className="text-2xl font-semibold text-neutral-400">{experience.company}</h3>
+                  <h3 className="text-2xl font-semibold bg-gradient-to-r from-neutral-300 to-neutral-500 bg-clip-text text-transparent">{experience.company}</h3>
                   {experience.tag && (
-                    <span className="border border-neutral-700 px-3 py-1 text-sm font-light h-fit rounded-lg bg-neutral-800/50">
+                    <span className="border border-red-900/50 px-3 py-1 text-sm font-light h-fit rounded-lg bg-red-950/30 text-red-300 shadow-md">
                       {experience.tag}
                     </span>
                   )}
                 </div>
-                <p className="text-2xl lg:text-3xl font-light">{experience.role}</p>
+                <p className="text-2xl lg:text-3xl font-light text-neutral-300">{experience.role}</p>
               </div>
               <div className="flex justify-between items-center text-sm">
-                <div className="flex gap-2 items-center">
-                  <CalendarOutlined className="text-blue-500" />
-                  <span className="font-light">{experience.date}</span>
+                <div className="flex gap-2 items-center px-3 py-1.5 rounded-lg bg-blue-950/20 border border-blue-900/30">
+                  <CalendarOutlined className="text-blue-400" />
+                  <span className="font-light text-blue-300">{experience.date}</span>
                 </div>
-                <div className="flex gap-2 items-center">
-                  <EnvironmentOutlined className="text-red-500" />
-                  <span className="font-light italic">{experience.location}</span>
+                <div className="flex gap-2 items-center px-3 py-1.5 rounded-lg bg-red-950/20 border border-red-900/30">
+                  <EnvironmentOutlined className="text-red-400" />
+                  <span className="font-light italic text-red-300">{experience.location}</span>
                 </div>
               </div>
-              <ul className="flex flex-col gap-3 text-sm font-light leading-relaxed list-disc list-inside">
+              <ul className="flex flex-col gap-3 text-sm font-light leading-relaxed list-disc list-inside text-neutral-400 marker:text-red-500">
                 {experience.accomplishments.map((accomplishment, index) => (
                   <li key={index} className="pl-2">
                     {accomplishment}
@@ -99,7 +103,7 @@ export default function Experience () {
               </ul>
               <div className="flex flex-wrap gap-2 text-xs mt-2">
                 {experience.tecnologies.map((technology, index) => (
-                  <span key={index} className="bg-neutral-700/90 px-3 py-1.5 rounded-lg font-medium">
+                  <span key={index} className="bg-gradient-to-r from-neutral-800/90 to-neutral-900/90 px-3 py-1.5 rounded-lg font-medium border border-neutral-700/50 text-neutral-300 hover:border-red-900/50 hover:from-neutral-800 hover:to-neutral-900 transition-all duration-300">
                     {technology}
                   </span>
                 ))}
