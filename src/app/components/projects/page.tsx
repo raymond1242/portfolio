@@ -26,14 +26,22 @@ export default function Projects () {
   return (
     <section id="projects" className="px-6 py-16 lg:py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/5 to-transparent pointer-events-none" />
-      <h2 className="lg:text-7xl text-5xl text-red-500 glow-text text-center pb-10 lg:mb-10">
-        &lt;
-        <span className="text-white font-medium">
-          PROJEC
-          <span className="font-light text-5xl">.ts</span>
-        </span>
-        /&gt;
-      </h2>
+      <div className="flex flex-col items-center pb-12 lg:mb-12 gap-4">
+        <div className="flex items-center gap-4">
+          <div className="h-px w-8 lg:w-16 bg-gradient-to-r from-transparent to-blue-500/50" />
+          <h2 className="lg:text-7xl text-5xl font-bold relative group">
+            <span className="text-blue-500 glow-text font-bold">&lt;</span>
+            <span className="bg-gradient-to-r from-white via-neutral-200 to-neutral-400 bg-clip-text text-transparent">
+              PROJECT
+              <span className="text-yellow-400 font-mono">.ts</span>
+            </span>
+            <span className="text-blue-500 glow-text font-bold">/&gt;</span>
+            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500/0 via-blue-500/50 to-blue-500/0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </h2>
+          <div className="h-px w-8 lg:w-16 bg-gradient-to-l from-transparent to-blue-500/50" />
+        </div>
+        <p className="text-neutral-400 text-sm lg:text-base font-light">Things I&apos;ve built</p>
+      </div>
       <div className="flex flex-col gap-16 lg:gap-20 max-w-7xl m-auto relative z-10">
         {projects.map((project, index) => (
           <div
