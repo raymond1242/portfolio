@@ -47,12 +47,12 @@ export default function Experience () {
   ]
 
   return (
-    <section id="experience" className="flex flex-col px-6 py-16 lg:py-20 relative">
+    <section id="experience" className="flex flex-col px-4 lg:px-6 py-16 lg:py-20 relative w-full overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-950/5 to-transparent pointer-events-none" />
-      <div className="flex flex-col items-center p-4 mb-12 gap-4">
-        <div className="flex items-center gap-4">
-          <div className="h-px w-8 lg:w-16 bg-gradient-to-r from-transparent to-red-500/50" />
-          <h2 className="lg:text-7xl text-5xl font-bold relative group">
+      <div className="flex flex-col items-center p-2 lg:p-4 mb-8 lg:mb-12 gap-3 lg:gap-4">
+        <div className="flex items-center gap-2 lg:gap-4 w-full justify-center">
+          <div className="h-px w-4 lg:w-16 bg-gradient-to-r from-transparent to-red-500/50" />
+          <h2 className="text-3xl lg:text-7xl font-bold relative group text-center">
             <span className="text-red-500 glow-text font-bold">{`{ `}</span>
             <span className="bg-gradient-to-r from-white via-neutral-200 to-neutral-400 bg-clip-text text-transparent">
               EXPER
@@ -62,9 +62,9 @@ export default function Experience () {
             <span className="text-red-500 glow-text font-bold">{` }`}</span>
             <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-red-500/0 via-red-500/50 to-red-500/0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </h2>
-          <div className="h-px w-8 lg:w-16 bg-gradient-to-l from-transparent to-red-500/50" />
+          <div className="h-px w-4 lg:w-16 bg-gradient-to-l from-transparent to-red-500/50" />
         </div>
-        <p className="text-neutral-400 text-sm lg:text-base font-light">My professional journey</p>
+        <p className="text-neutral-400 text-xs lg:text-base font-light text-center">My professional journey</p>
       </div>
       <div className="flex flex-col lg:gap-14 gap-10 m-auto max-w-6xl relative z-10">
         {experiences.map((experience, index) => (
