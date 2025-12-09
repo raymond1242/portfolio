@@ -13,9 +13,9 @@ export default function Home() {
         {/* Animated background effects */}
         <div className="absolute inset-0 bg-gradient-to-b from-red-950/10 via-transparent to-transparent pointer-events-none" />
         <div className="absolute top-20 -left-40 w-80 h-80 bg-red-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 -right-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-700" />
+        <div className="absolute bottom-40 -right-40 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-100" />
 
-        <div className="flex flex-col lg:gap-8 gap-6 m-auto max-w-5xl px-4 py-2 relative z-10">
+        <div className="flex flex-col lg:gap-4 gap-4 m-auto max-w-5xl px-4 py-2 relative z-10">
           <div className="flex flex-col gap-4">
             <p className="text-4xl lg:text-5xl text-neutral-200 animate-fade-in font-light">
               Hi <span className="inline-block animate-wave">✋</span>,
