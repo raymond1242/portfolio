@@ -11,11 +11,11 @@ export default function Experience () {
       location: "Lima, PE",
       date: "Nov 2024 - May 2025",
       accomplishments: [
-        "Contributed to the end-to-end development of backend applications using Node.js and the NestJS framework, building a scalable",
-        "microservices architecture from scratch. Designed and optimized database integrations with Postgres (via Prisma ORM) and",
-        "DynamoDB, while implementing real-time communication through AWS Lambda and WebSocket APIs. Ensured secure access and user management by integrating AWS Cognito authentication across services"
+        "Contributed to the end-to-end development of backend applications using Node.js and the NestJS framework, building a scalable microservices architecture from scratch.",
+        "Designed and optimized database integrations with Postgres (via Prisma ORM) and DynamoDB, while implementing real-time communication through AWS Lambda and WebSocket APIs.",
+        "Ensured secure access and user management by integrating AWS Cognito authentication across services."
       ],
-      tecnologies: ["Node.js", "NestJS", "Docker", "PostgreSQL", "Flask"],
+      technologies: ["Node.js", "NestJS", "Docker", "PostgreSQL", "AWS"],
     },
     {
       company: "Level Up Technology",
@@ -28,7 +28,7 @@ export default function Experience () {
         "Implemented performance optimization techniques, such as parallelism ensuring high responsiveness making the process 60% faster.",
         "Demonstrated expertise in troubleshooting and debugging issues, implementing effective error handling mechanisms and logging strategies."
       ],
-      tecnologies: ["Python", "Flask", "Docker", "MongoDB", "Vue.js"],
+      technologies: ["Python", "Flask", "Docker", "MongoDB", "Vue.js"],
     },
     {
       company: "Bitmaker",
@@ -42,78 +42,79 @@ export default function Experience () {
         "Collaborated closely with designers and quality assurance (QA) teams throughout the development lifecycle, ensuring design alignment specifications.",
         "Successfully integrated new features and modules into existing applications, ensuring seamless integration and compatibility with existing systems."
       ],
-      tecnologies: ["Python", "Django", "ReactTS", "Docker", "PostgreSQL", "MongoDB"],
+      technologies: ["Python", "Django", "React", "Docker", "PostgreSQL"],
     },
   ]
 
   return (
-    <section id="experience" className="flex flex-col px-4 lg:px-6 py-16 lg:py-20 relative w-full overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-100/30 to-transparent pointer-events-none" />
-      <div className="flex flex-col items-center p-2 lg:p-4 mb-8 lg:mb-12 gap-3 lg:gap-4">
-        <div className="flex items-center gap-2 lg:gap-4 w-full justify-center">
-          <div className="h-px w-4 lg:w-16 bg-gradient-to-r from-transparent to-red-400/50" />
-          <h2 className="text-3xl lg:text-7xl font-bold relative group text-center">
-            <span className="text-red-500 glow-text font-bold">{`{ `}</span>
-            <span className="bg-gradient-to-r from-neutral-800 via-neutral-600 to-neutral-500 bg-clip-text text-transparent">
-              EXPER
-              <span className="text-red-500 glow-text-subtle">I</span>
-              ENCE
-            </span>
-            <span className="text-red-500 glow-text font-bold">{` }`}</span>
-            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-red-500/0 via-red-500/50 to-red-500/0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          </h2>
-          <div className="h-px w-4 lg:w-16 bg-gradient-to-l from-transparent to-red-400/50" />
-        </div>
-        <p className="text-neutral-500 text-xs lg:text-base font-light text-center">My professional journey</p>
+    <section id="experience" className="py-20 lg:py-32 px-6 lg:px-12 max-w-6xl mx-auto">
+      <div className="mb-16">
+        <p className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-2">Experience</p>
+        <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900">Where I&apos;ve worked</h2>
       </div>
-      <div className="flex flex-col lg:gap-14 gap-10 m-auto max-w-6xl relative z-10">
+
+      <div className="flex flex-col gap-8">
         {experiences.map((experience, index) => (
-          <div key={index} className="group flex flex-col lg:flex-row gap-6 lg:gap-8 p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-white to-neutral-50 border border-neutral-200 hover:border-neutral-300 transition-all duration-500 hover:shadow-xl hover:shadow-red-200/20 backdrop-blur-sm">
-            <div className="relative my-auto overflow-hidden rounded-xl flex-shrink-0 self-center lg:self-start">
-              <Image
-                className="transition-all duration-500 ease-out rounded-xl border-2 border-neutral-200 group-hover:border-red-300/60 shadow-lg group-hover:scale-105 group-hover:shadow-red-200/40"
-                src={experience.image}
-                alt={experience.company}
-                width={540}
-                height={160}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </div>
-            <div className="flex flex-col lg:gap-5 gap-4 p-2 max-w-[540px]">
-              <div className="flex flex-col gap-2">
-                <div className="flex justify-between items-start">
-                  <h3 className="text-2xl font-semibold bg-gradient-to-r from-neutral-700 to-neutral-500 bg-clip-text text-transparent">{experience.company}</h3>
-                  {experience.tag && (
-                    <span className="border border-red-200 px-3 py-1 text-sm font-light h-fit rounded-lg bg-red-50 text-red-600 shadow-sm">
-                      {experience.tag}
+          <div
+            key={index}
+            className="group relative bg-white rounded-2xl border border-neutral-200 hover:border-neutral-300 p-6 lg:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-200/50"
+          >
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+              <div className="flex-shrink-0">
+                <Image
+                  className="rounded-xl object-cover w-full lg:w-[280px] h-[160px]"
+                  src={experience.image}
+                  alt={experience.company}
+                  width={280}
+                  height={160}
+                />
+              </div>
+
+              <div className="flex-1 flex flex-col gap-4">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-2">
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <h3 className="text-xl font-bold text-neutral-900">{experience.company}</h3>
+                      {experience.tag && (
+                        <span className="px-2 py-0.5 text-xs font-medium bg-neutral-900 text-white rounded-full">
+                          {experience.tag}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-lg text-neutral-500 font-light">{experience.role}</p>
+                  </div>
+
+                  <div className="flex flex-col lg:items-end gap-1 text-sm text-neutral-400">
+                    <div className="flex items-center gap-2">
+                      <CalendarOutlined />
+                      <span>{experience.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <EnvironmentOutlined />
+                      <span>{experience.location}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <ul className="space-y-2 text-sm text-neutral-600 leading-relaxed">
+                  {experience.accomplishments.map((accomplishment, idx) => (
+                    <li key={idx} className="flex gap-3">
+                      <span className="text-neutral-300 mt-1.5">•</span>
+                      <span>{accomplishment}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {experience.technologies.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 text-xs font-medium bg-neutral-100 text-neutral-600 rounded-full"
+                    >
+                      {tech}
                     </span>
-                  )}
+                  ))}
                 </div>
-                <p className="text-2xl lg:text-3xl font-light text-neutral-600">{experience.role}</p>
-              </div>
-              <div className="flex justify-between items-center text-sm">
-                <div className="flex gap-2 items-center px-3 py-1.5 rounded-lg bg-blue-50 border border-blue-200">
-                  <CalendarOutlined className="text-blue-500" />
-                  <span className="font-light text-blue-600">{experience.date}</span>
-                </div>
-                <div className="flex gap-2 items-center px-3 py-1.5 rounded-lg bg-red-50 border border-red-200">
-                  <EnvironmentOutlined className="text-red-500" />
-                  <span className="font-light italic text-red-600">{experience.location}</span>
-                </div>
-              </div>
-              <ul className="flex flex-col gap-3 text-sm font-light leading-relaxed list-disc list-inside text-neutral-600 marker:text-red-500">
-                {experience.accomplishments.map((accomplishment, index) => (
-                  <li key={index} className="pl-2">
-                    {accomplishment}
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-wrap gap-2 text-xs mt-2">
-                {experience.tecnologies.map((technology, index) => (
-                  <span key={index} className="bg-gradient-to-r from-neutral-100 to-neutral-50 px-3 py-1.5 rounded-lg font-medium border border-neutral-200 text-neutral-700 hover:border-red-300 hover:from-red-50 hover:to-white transition-all duration-300">
-                    {technology}
-                  </span>
-                ))}
               </div>
             </div>
           </div>
