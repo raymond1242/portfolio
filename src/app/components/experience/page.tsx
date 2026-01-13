@@ -10,12 +10,8 @@ export default function Experience () {
       image: "/images/experience/bluepoint.png",
       location: "Lima, PE",
       date: "Nov 2024 - May 2025",
-      accomplishments: [
-        "Contributed to the end-to-end development of backend applications using Node.js and the NestJS framework, building a scalable microservices architecture from scratch.",
-        "Designed and optimized database integrations with Postgres (via Prisma ORM) and DynamoDB, while implementing real-time communication through AWS Lambda and WebSocket APIs.",
-        "Ensured secure access and user management by integrating AWS Cognito authentication across services."
-      ],
-      technologies: ["Node.js", "NestJS", "Docker", "PostgreSQL", "AWS"],
+      description: "Built scalable microservices with NestJS and AWS. Designed database integrations with Postgres and DynamoDB, implementing real-time WebSocket APIs.",
+      technologies: ["Node.js", "NestJS", "AWS", "PostgreSQL"],
     },
     {
       company: "Level Up Technology",
@@ -23,12 +19,8 @@ export default function Experience () {
       image: "/images/experience/arkrisk.png",
       location: "New York, USA",
       date: "Nov 2023 - Present",
-      accomplishments: [
-        "Led design and development phase adhered to best practices and standards, collaborating closely with stakeholders.",
-        "Implemented performance optimization techniques, such as parallelism ensuring high responsiveness making the process 60% faster.",
-        "Demonstrated expertise in troubleshooting and debugging issues, implementing effective error handling mechanisms and logging strategies."
-      ],
-      technologies: ["Python", "Flask", "Docker", "MongoDB", "Vue.js"],
+      description: "Led backend development with performance optimizations achieving 60% faster processing. Implemented robust error handling and logging strategies.",
+      technologies: ["Python", "Flask", "MongoDB", "Docker"],
     },
     {
       company: "Bitmaker",
@@ -37,12 +29,8 @@ export default function Experience () {
       location: "Arequipa, Peru",
       date: "Apr 2022 - Oct 2023",
       tag: "Open Source",
-      accomplishments: [
-        "Implemented backend critical features and performance enhancements. Introduced enhancements to the interface of development platform.",
-        "Collaborated closely with designers and quality assurance (QA) teams throughout the development lifecycle, ensuring design alignment specifications.",
-        "Successfully integrated new features and modules into existing applications, ensuring seamless integration and compatibility with existing systems."
-      ],
-      technologies: ["Python", "Django", "React", "Docker", "PostgreSQL"],
+      description: "Developed critical backend features and UI enhancements. Collaborated with design and QA teams to deliver seamless integrations.",
+      technologies: ["Python", "Django", "React", "Docker"],
     },
   ]
 
@@ -53,68 +41,56 @@ export default function Experience () {
         <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900">Where I&apos;ve worked</h2>
       </div>
 
-      <div className="flex flex-col gap-8">
+      <div className="grid md:grid-cols-3 gap-6">
         {experiences.map((experience, index) => (
           <div
             key={index}
-            className="group relative bg-white rounded-2xl border border-neutral-200 hover:border-neutral-300 p-6 lg:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-200/50"
+            className="group flex flex-col bg-white rounded-2xl border border-neutral-100 hover:border-neutral-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-neutral-400/80"
           >
-            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-              <div className="flex-shrink-0">
-                <Image
-                  className="rounded-xl object-cover w-full lg:w-[280px] h-[160px]"
-                  src={experience.image}
-                  alt={experience.company}
-                  width={280}
-                  height={160}
-                />
+            {/* Image at top */}
+            <div className="relative w-full h-40 overflow-hidden">
+              <Image
+                src={experience.image}
+                alt={experience.company}
+                fill
+                className="object-cover"
+              />
+              {experience.tag && (
+                <span className="absolute top-3 left-3 px-2 py-0.5 text-xs font-medium bg-neutral-900 text-white rounded-full">
+                  {experience.tag}
+                </span>
+              )}
+            </div>
+
+            {/* Content */}
+            <div className="flex flex-col p-6 flex-1">
+              <h3 className="text-lg font-bold text-neutral-900">{experience.company}</h3>
+              <p className="text-neutral-500 text-lg font-light mb-3">{experience.role}</p>
+
+              <div className="flex flex-col gap-1 text-xs text-neutral-500 mb-4">
+                <div className="flex items-center gap-2">
+                  <CalendarOutlined className="text-blue-500" />
+                  <span>{experience.date}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <EnvironmentOutlined className="text-red-500" />
+                  <span>{experience.location}</span>
+                </div>
               </div>
 
-              <div className="flex-1 flex flex-col gap-4">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-2">
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <h3 className="text-xl font-bold text-neutral-900">{experience.company}</h3>
-                      {experience.tag && (
-                        <span className="px-2 py-0.5 text-xs font-medium bg-neutral-900 text-white rounded-full">
-                          {experience.tag}
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-lg text-neutral-500 font-light">{experience.role}</p>
-                  </div>
+              <p className="text-sm text-neutral-600 leading-relaxed flex-1 mb-4">
+                {experience.description}
+              </p>
 
-                  <div className="flex flex-col lg:items-end gap-1 text-sm text-neutral-400">
-                    <div className="flex items-center gap-2">
-                      <CalendarOutlined />
-                      <span>{experience.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <EnvironmentOutlined />
-                      <span>{experience.location}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <ul className="space-y-2 text-sm text-neutral-600 leading-relaxed">
-                  {experience.accomplishments.map((accomplishment, idx) => (
-                    <li key={idx} className="flex gap-3">
-                      <span className="text-neutral-300 mt-1.5">•</span>
-                      <span>{accomplishment}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {experience.technologies.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 text-xs font-medium bg-neutral-100 text-neutral-600 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {experience.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="px-2 py-1 text-xs font-medium bg-neutral-100 text-neutral-600 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
