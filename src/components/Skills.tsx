@@ -61,7 +61,9 @@ export default function Skills () {
                     alt={skill.name}
                     width={40}
                     height={40}
-                    className="object-contain"
+                    // Explicit w-10/h-10: Tailwind's preflight sets img { height: auto }, which otherwise resizes
+                    // non-square icons (e.g. AWS 160x96 rendered 40x24) and triggers next/image's aspect-ratio warning
+                    className="w-10 h-10 object-contain"
                   />
                   <span className="text-neutral-700 font-medium">{skill.name}</span>
                 </div>
