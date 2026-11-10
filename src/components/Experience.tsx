@@ -5,11 +5,29 @@ export default function Experience () {
 
   const experiences = [
     {
+      company: "Inetum",
+      role: "Data & AI Engineer",
+      image: "/images/experience/inetum.webp",
+      location: "Lima, Peru",
+      date: "2026 – Present",
+      description: "Data and AI engineering on Belcorp's Snowflake and AWS platform. Built Cortex Agents (text-to-SQL, RAG) for natural-language analytics and MCP servers connecting AI assistants to internal tools.",
+      technologies: ["Snowflake", "Cortex AI", "Python", "TypeScript"],
+    },
+    {
+      company: "Brandsolo",
+      role: "Full Stack Developer",
+      image: "/images/experience/brandsolo.webp",
+      location: "Arequipa, Peru",
+      date: "2025 – 2026",
+      description: "Built large-scale Scrapy pipelines for JavaScript-rendered e-commerce sites, from spider development to validation and multi-database sync, running on AWS with centralized monitoring.",
+      technologies: ["Python", "Scrapy", "AWS"],
+    },
+    {
       company: "Bluepoint AI",
       role: "Software Developer",
       image: "/images/experience/bluepoint.webp",
-      location: "Lima, PE",
-      date: "Nov 2024 - May 2025",
+      location: "Lima, Peru",
+      date: "2024 – 2025",
       description: "Built scalable microservices with NestJS and AWS. Designed database integrations with Postgres and DynamoDB, implementing real-time WebSocket APIs.",
       technologies: ["Node.js", "NestJS", "AWS", "PostgreSQL"],
     },
@@ -18,8 +36,8 @@ export default function Experience () {
       role: "Python Developer",
       image: "/images/experience/arkrisk.webp",
       location: "New York, USA",
-      date: "Nov 2023 - Present",
-      description: "Led backend development with performance optimizations achieving 60% faster processing. Implemented robust error handling and logging strategies.",
+      date: "2023 – 2025",
+      description: "Built and optimized high-performance backend APIs with Python (Flask), owning the full API lifecycle. Increased core processing performance 4× through parallelization and scaled MongoDB for high-volume data.",
       technologies: ["Python", "Flask", "MongoDB", "Docker"],
     },
     {
@@ -27,7 +45,7 @@ export default function Experience () {
       role: "Software Developer",
       image: "/images/experience/estela.webp",
       location: "Arequipa, Peru",
-      date: "Apr 2022 - Oct 2023",
+      date: "2022 – 2023",
       tag: "Open Source",
       description: "Developed critical backend features and UI enhancements. Collaborated with design and QA teams to deliver seamless integrations.",
       technologies: ["Python", "Django", "React", "Docker"],
@@ -41,11 +59,12 @@ export default function Experience () {
         <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900">Where I&apos;ve worked</h2>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        {experiences.map((experience, index) => (
+      {/* Flex instead of grid so an incomplete last row stays centered; card width = 1/2 (md) or 1/3 (lg) minus the gaps */}
+      <div className="flex flex-wrap justify-center gap-6">
+        {experiences.map((experience) => (
           <div
-            key={index}
-            className="group flex flex-col bg-white rounded-2xl border border-neutral-100 hover:border-neutral-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-neutral-400/80"
+            key={experience.company}
+            className="group flex flex-col w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-2xl border border-neutral-100 hover:border-neutral-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-neutral-400/80"
           >
             {/* Image at top */}
             <div className="relative w-full h-40 overflow-hidden">
@@ -53,8 +72,8 @@ export default function Experience () {
                 src={experience.image}
                 alt={experience.company}
                 fill
-                sizes="(min-width: 1152px) 336px, (min-width: 768px) 33vw, 100vw"
-                className="object-cover"
+                sizes="(min-width: 1152px) 336px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                className="object-cover object-top"
               />
               {experience.tag && (
                 <span className="absolute top-3 left-3 px-2 py-0.5 text-xs font-medium bg-neutral-900 text-white rounded-full">
@@ -84,9 +103,9 @@ export default function Experience () {
               </p>
 
               <div className="flex flex-wrap gap-2 mt-auto">
-                {experience.technologies.map((tech, idx) => (
+                {experience.technologies.map((tech) => (
                   <span
-                    key={idx}
+                    key={tech}
                     className="px-2 py-1 text-xs font-medium bg-neutral-100 text-neutral-600 rounded-full"
                   >
                     {tech}
