@@ -1,7 +1,7 @@
-import Skills from "./components/skills/page";
-import Projects from "./components/projects/page";
-import Header from "./components/header/page";
-import Experience from "./components/experience/page";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import Header from "@/components/Header";
+import Experience from "@/components/Experience";
 import { FileTextOutlined } from "@ant-design/icons";
 import Image from "next/image";
 
@@ -55,9 +55,10 @@ export default function Home() {
               {/* Image container with shadow */}
               <div className="absolute inset-0 overflow-hidden rounded-full shadow-xl shadow-neutral-400/80">
                 <Image
-                  src="/images/me.jpeg"
+                  src="/images/me.webp"
                   alt="Raymond Negron"
                   fill
+                  sizes="(min-width: 1024px) 384px, 256px"
                   className="object-cover"
                   priority
                 />

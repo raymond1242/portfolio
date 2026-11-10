@@ -8,7 +8,7 @@ export default function Projects () {
       subtitle: "Stock Management System",
       description: "A comprehensive stock management solution that helps businesses track inventory, manage orders, and optimize their supply chain operations.",
       link: "https://www.somer.lat",
-      image: "/images/projects/somer-landing.png",
+      image: "/images/projects/somer-landing.webp",
       github: "https://github.com/raymond1242/somer-web",
       technologies: ["React", "TypeScript", "Django", "PostgreSQL"],
     },
@@ -17,7 +17,7 @@ export default function Projects () {
       subtitle: "Order Management System",
       description: "An intuitive order management platform designed to streamline the ordering process and improve customer experience for small businesses.",
       link: "https://collyn.vercel.app",
-      image: "/images/projects/collyn-landing.png",
+      image: "/images/projects/collyn-landing.webp",
       github: "https://github.com/raymond1242/collyn-web",
       technologies: ["React", "TypeScript", "Django", "PostgreSQL"],
     }
@@ -34,7 +34,7 @@ export default function Projects () {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="group grid lg:grid-cols-2 gap-8 items-center p-6 lg:p-8 bg-white rounded-2xl border broder-neutral-100 hover:border-neutral-300 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-400/80"
+            className="group grid lg:grid-cols-2 gap-8 items-center p-6 lg:p-8 bg-white rounded-2xl border border-neutral-100 hover:border-neutral-300 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-400/80"
           >
             <div className={`relative overflow-hidden rounded-xl ${index % 2 === 1 ? "lg:order-2" : ""}`}>
               <a href={project.link} target="_blank" className="block">
@@ -42,8 +42,9 @@ export default function Projects () {
                   src={project.image}
                   alt={project.name}
                   className="w-full h-auto rounded-xl"
-                  width={680}
-                  height={450}
+                  width={1600}
+                  height={938}
+                  sizes="(min-width: 1152px) 480px, (min-width: 1024px) 45vw, 100vw"
                 />
               </a>
             </div>
