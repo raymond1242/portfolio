@@ -34,7 +34,7 @@ export default function Projects () {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="group grid lg:grid-cols-2 gap-8 items-center p-6 lg:p-8 bg-white rounded-2xl border broder-neutral-100 hover:border-neutral-300 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-400/80"
+            className="group grid lg:grid-cols-2 gap-8 items-center p-6 lg:p-8 bg-white rounded-2xl border border-neutral-100 hover:border-neutral-300 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-400/80"
           >
             <div className={`relative overflow-hidden rounded-xl ${index % 2 === 1 ? "lg:order-2" : ""}`}>
               <a href={project.link} target="_blank" className="block">
