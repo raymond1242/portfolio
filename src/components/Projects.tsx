@@ -42,8 +42,9 @@ export default function Projects () {
                   src={project.image}
                   alt={project.name}
                   className="w-full h-auto rounded-xl"
-                  width={680}
-                  height={450}
+                  width={1600}
+                  height={938}
+                  sizes="(min-width: 1152px) 480px, (min-width: 1024px) 45vw, 100vw"
                 />
               </a>
             </div>

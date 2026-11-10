@@ -53,6 +53,7 @@ export default function Experience () {
                 src={experience.image}
                 alt={experience.company}
                 fill
+                sizes="(min-width: 1152px) 336px, (min-width: 768px) 33vw, 100vw"
                 className="object-cover"
               />
               {experience.tag && (

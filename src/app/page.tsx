@@ -58,6 +58,7 @@ export default function Home() {
                   src="/images/me.webp"
                   alt="Raymond Negron"
                   fill
+                  sizes="(min-width: 1024px) 384px, 256px"
                   className="object-cover"
                   priority
                 />
