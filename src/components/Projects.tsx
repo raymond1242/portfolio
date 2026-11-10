@@ -16,7 +16,7 @@ export default function Projects () {
       name: "Somer",
       subtitle: "Inventory Management System",
       description: "Multi-store inventory system for tracking product entries, stock movements, and distribution workflows across locations.",
-      link: "https://www.somer.lat",
+      link: "https://somer-web.vercel.app",
       image: "/images/projects/somer-landing.webp",
       github: "https://github.com/raymond1242/somer-web",
       technologies: ["React", "TypeScript", "Django", "PostgreSQL"],

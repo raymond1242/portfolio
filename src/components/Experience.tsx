@@ -14,7 +14,7 @@ export default function Experience () {
       technologies: ["Snowflake", "Cortex AI", "Python", "TypeScript"],
     },
     {
-      company: "Brandsolo",
+      company: "BrandSolo",
       role: "Full Stack Developer",
       image: "/images/experience/brandsolo.webp",
       location: "Arequipa, Peru",
