@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Personal portfolio site for Raymond Negron (Software Developer). Single-page Next.js 14.1 (App Router) + React 18 + TypeScript + Tailwind CSS 3. Bootstrapped with `create-next-app`, deployed on Vercel. Site copy is in English.
+Personal portfolio site for Raymond Negron (Software Developer). Single-page Next.js 16 (App Router, Turbopack) + React 19 + TypeScript + Tailwind CSS 3. Bootstrapped with `create-next-app`, deployed on Vercel. Site copy is in English. Requires Node.js 20.9 or later.
 
 ## Commands
 
@@ -14,10 +14,22 @@ npm is the package manager (`package-lock.json` is committed).
 npm run dev      # dev server at http://localhost:3000
 npm run build    # production build (also type-checks)
 npm run start    # serve the production build
-npm run lint     # next lint, using eslint-config next/core-web-vitals
+npm run lint     # eslint . (flat config in eslint.config.mjs, eslint-config-next/core-web-vitals)
+npm audit --omit=dev   # production dependency audit; it should report 0 vulnerabilities
 ```
 
 There is no test framework. To verify a change, run `npm run lint` and `npm run build`.
+
+## Next.js 16 and dependency constraints
+
+- Next.js 16 differs from older versions you may know. Its docs ship with the package at `node_modules/next/dist/docs/`, so check them before using an unfamiliar API or config option.
+- `AGENTS.md` is managed by Next.js. When an AI agent runs `next dev`, Next writes that file and restores it if it is removed. Commit it as-is and do not edit it. To stop Next from writing it, set `agentRules: false` in `next.config.mjs`.
+- `next build` rewrites `tsconfig.json` (for example `jsx: react-jsx` and `.next/dev/types`). Keep those changes.
+- Pinned on purpose:
+  - **ESLint 9.x, not 10.** The plugins that `eslint-config-next@16` relies on (`eslint-plugin-react`, `jsx-a11y` and `import`) only support up to ESLint 9.
+  - **`@ant-design/icons` 5.x, at 5.6 or later.** Version 5.3 and earlier fails type-checking with React 19. Version 6.x calls `createContext` at module load, which breaks the build in Server Components, and every component here is a Server Component.
+- Turbopack rejects `.ico`/`.png` assets that are not RGBA. Re-encode one with `ffmpeg -i in.ico -pix_fmt rgba -c:v png -f ico out.ico`.
+- `npm audit` without `--omit=dev` still reports moderate advisories in lint tooling (`typescript-eslint` → `minimatch`/`glob`). None of them ship to the site, and none has a non-breaking fix yet.
 
 ## Architecture
 
