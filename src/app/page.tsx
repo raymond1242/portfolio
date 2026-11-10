@@ -1,7 +1,7 @@
-import Skills from "./components/skills/page";
-import Projects from "./components/projects/page";
-import Header from "./components/header/page";
-import Experience from "./components/experience/page";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import Header from "@/components/Header";
+import Experience from "@/components/Experience";
 import { FileTextOutlined } from "@ant-design/icons";
 import Image from "next/image";
 
