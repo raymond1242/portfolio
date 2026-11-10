@@ -7,7 +7,7 @@ export default function Experience () {
     {
       company: "Bluepoint AI",
       role: "Software Developer",
-      image: "/images/experience/bluepoint.png",
+      image: "/images/experience/bluepoint.webp",
       location: "Lima, PE",
       date: "Nov 2024 - May 2025",
       description: "Built scalable microservices with NestJS and AWS. Designed database integrations with Postgres and DynamoDB, implementing real-time WebSocket APIs.",
@@ -16,7 +16,7 @@ export default function Experience () {
     {
       company: "Level Up Technology",
       role: "Python Developer",
-      image: "/images/experience/arkrisk.png",
+      image: "/images/experience/arkrisk.webp",
       location: "New York, USA",
       date: "Nov 2023 - Present",
       description: "Led backend development with performance optimizations achieving 60% faster processing. Implemented robust error handling and logging strategies.",
@@ -25,7 +25,7 @@ export default function Experience () {
     {
       company: "Bitmaker",
       role: "Software Developer",
-      image: "/images/experience/estela.png",
+      image: "/images/experience/estela.webp",
       location: "Arequipa, Peru",
       date: "Apr 2022 - Oct 2023",
       tag: "Open Source",

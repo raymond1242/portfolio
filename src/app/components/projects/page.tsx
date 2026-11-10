@@ -8,7 +8,7 @@ export default function Projects () {
       subtitle: "Stock Management System",
       description: "A comprehensive stock management solution that helps businesses track inventory, manage orders, and optimize their supply chain operations.",
       link: "https://www.somer.lat",
-      image: "/images/projects/somer-landing.png",
+      image: "/images/projects/somer-landing.webp",
       github: "https://github.com/raymond1242/somer-web",
       technologies: ["React", "TypeScript", "Django", "PostgreSQL"],
     },
@@ -17,7 +17,7 @@ export default function Projects () {
       subtitle: "Order Management System",
       description: "An intuitive order management platform designed to streamline the ordering process and improve customer experience for small businesses.",
       link: "https://collyn.vercel.app",
-      image: "/images/projects/collyn-landing.png",
+      image: "/images/projects/collyn-landing.webp",
       github: "https://github.com/raymond1242/collyn-web",
       technologies: ["React", "TypeScript", "Django", "PostgreSQL"],
     }

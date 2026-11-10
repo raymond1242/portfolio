@@ -5,16 +5,16 @@ export default function Skills () {
     {
       title: "Languages",
       skills: [
-        { name: "Python", icon: "/images/skills/python.png" },
+        { name: "Python", icon: "/images/skills/python.webp" },
         { name: "TypeScript", icon: "/images/skills/typescript.svg" },
-        { name: "JavaScript", icon: "/images/skills/javascript.png" },
+        { name: "JavaScript", icon: "/images/skills/javascript.webp" },
       ]
     },
     {
       title: "Frameworks",
       skills: [
-        { name: "React", icon: "/images/skills/react.png" },
-        { name: "Django", icon: "/images/skills/django.png" },
+        { name: "React", icon: "/images/skills/react.webp" },
+        { name: "Django", icon: "/images/skills/django.webp" },
         { name: "NestJS", icon: "/images/skills/nestjs.svg" },
       ]
     },
@@ -22,8 +22,8 @@ export default function Skills () {
       title: "Tools",
       skills: [
         { name: "Docker", icon: "/images/skills/docker.webp" },
-        { name: "Git", icon: "/images/skills/git.png" },
-        { name: "AWS", icon: "/images/skills/aws.png" },
+        { name: "Git", icon: "/images/skills/git.webp" },
+        { name: "AWS", icon: "/images/skills/aws.webp" },
       ]
     }
   ]

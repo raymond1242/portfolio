@@ -55,7 +55,7 @@ export default function Home() {
               {/* Image container with shadow */}
               <div className="absolute inset-0 overflow-hidden rounded-full shadow-xl shadow-neutral-400/80">
                 <Image
-                  src="/images/me.jpeg"
+                  src="/images/me.webp"
                   alt="Raymond Negron"
                   fill
                   className="object-cover"
