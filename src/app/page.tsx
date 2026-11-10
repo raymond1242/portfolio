@@ -6,8 +6,9 @@ import { FileTextOutlined } from "@ant-design/icons";
 import Image from "next/image";
 
 export default function Home() {
+  // overflow-x-clip, not overflow-x-hidden: "hidden" turns <main> into a scroll container, which disables the sticky header
   return (
-    <main id="home" className="relative overflow-x-hidden bg-white">
+    <main id="home" className="relative overflow-x-clip bg-white">
       <Header />
       <section className="flex px-6 lg:px-12 lg:py-32 py-20 relative min-h-[90vh] items-center w-full max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 w-full items-center">

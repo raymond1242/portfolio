@@ -9,10 +9,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth scrolling for in-page anchors; offset keeps section titles clear of the sticky header */
+/* Smooth scrolling for in-page anchors; offset keeps section titles clear of the sticky header
+   (the header is ~105px tall on mobile, where logo and nav stack, vs ~73px on desktop) */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 2rem;
+  scroll-padding-top: 4rem;
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 2rem;
+  }
 }
 
 /* Selection styling */
