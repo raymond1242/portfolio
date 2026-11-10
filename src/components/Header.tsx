@@ -1,8 +1,10 @@
 import Image from "next/image";
 
+// "Home" is desktop-only: on mobile the logo already links to #home, and dropping it keeps the nav on one line.
 const navItems = [
-  { href: "#home", label: "Home" },
+  { href: "#home", label: "Home", desktopOnly: true },
   { href: "#experience", label: "Experience" },
+  { href: "#education", label: "Education" },
   { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
 ];
@@ -22,9 +24,9 @@ export default function Header() {
         </div>
       </a>
       <nav>
-        <ul className="flex flex-row gap-8 py-2 text-base font-normal">
-          {navItems.map(({ href, label }) => (
-            <li key={href}>
+        <ul className="flex flex-row flex-wrap justify-center gap-x-5 gap-y-1 lg:gap-8 py-2 text-sm lg:text-base font-normal">
+          {navItems.map(({ href, label, desktopOnly }) => (
+            <li key={href} className={desktopOnly ? "hidden lg:block" : undefined}>
               <a href={href} className="text-neutral-500 hover:text-neutral-900 transition-colors duration-200">
                 {label}
               </a>
