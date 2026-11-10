@@ -9,9 +9,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling for in-page anchors; offset keeps section titles clear of the sticky header */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
 }
 
 /* Selection styling */
