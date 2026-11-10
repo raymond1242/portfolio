@@ -15,15 +15,26 @@ export default function Skills () {
       skills: [
         { name: "React", icon: "/images/skills/react.webp" },
         { name: "Django", icon: "/images/skills/django.webp" },
+        { name: "Flask", icon: "/images/skills/flask.svg" },
         { name: "NestJS", icon: "/images/skills/nestjs.svg" },
+        { name: "Scrapy", icon: "/images/skills/scrapy.svg" },
       ]
     },
     {
-      title: "Tools",
+      title: "Data",
       skills: [
+        { name: "Snowflake", icon: "/images/skills/snowflake.svg" },
+        { name: "PostgreSQL", icon: "/images/skills/postgresql.svg" },
+        { name: "MongoDB", icon: "/images/skills/mongodb.svg" },
+      ]
+    },
+    {
+      title: "Cloud & Tools",
+      skills: [
+        { name: "AWS", icon: "/images/skills/aws.webp" },
         { name: "Docker", icon: "/images/skills/docker.webp" },
         { name: "Git", icon: "/images/skills/git.webp" },
-        { name: "AWS", icon: "/images/skills/aws.webp" },
+        { name: "GitHub Actions", icon: "/images/skills/github-actions.svg" },
       ]
     }
   ]
@@ -35,7 +46,7 @@ export default function Skills () {
         <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900">Technologies I use</h2>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
         {skillCategories.map((category, index) => (
           <div key={index}>
             <h3 className="text-lg font-semibold text-neutral-900 mb-6">{category.title}</h3>
