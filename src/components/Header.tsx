@@ -19,7 +19,7 @@ export default function Header() {
             Raymond Negron
           </p>
           <p className="text-xs text-neutral-400">
-            Software Developer
+            Software Engineer
           </p>
         </div>
       </a>

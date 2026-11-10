@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-6">
         <div className="text-center lg:text-left">
           <p className="text-neutral-900 font-semibold">Raymond Negron</p>
-          <p className="text-sm text-neutral-400">Software Developer</p>
+          <p className="text-sm text-neutral-400">Software Engineer</p>
         </div>
 
         <div className="flex gap-4">

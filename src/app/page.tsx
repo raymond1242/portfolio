@@ -22,14 +22,15 @@ export default function Home() {
               Raymond Negron
             </h1>
             <p className="text-2xl lg:text-3xl font-light text-neutral-500 -mt-2">
-              Software Developer
+              Software Engineer
             </p>
 
             <div className="mt-4 lg:mt-6 max-w-xl">
               <p className="text-neutral-600 text-lg leading-relaxed font-light">
-                Skilled in building <span className="text-neutral-900 font-medium">scalable microservices</span> using
-                Node.js, Python, and AWS. Passionate about <span className="text-neutral-900 font-medium">real-time systems</span> and
-                delivering <span className="text-neutral-900 font-medium">efficient solutions</span>.
+                <span className="text-neutral-900 font-medium">5+ years</span> building backend systems, cloud-native
+                solutions, and data platforms. Skilled in <span className="text-neutral-900 font-medium">scalable microservices</span> with
+                Python and AWS, and <span className="text-neutral-900 font-medium">Snowflake data platforms</span> powered
+                by <span className="text-neutral-900 font-medium">AI agents</span>.
               </p>
             </div>
 

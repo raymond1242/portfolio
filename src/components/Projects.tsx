@@ -4,21 +4,21 @@ import { GithubFilled, ArrowRightOutlined } from "@ant-design/icons"
 export default function Projects () {
   const projects = [
     {
-      name: "Somer",
-      subtitle: "Stock Management System",
-      description: "A comprehensive stock management solution that helps businesses track inventory, manage orders, and optimize their supply chain operations.",
-      link: "https://www.somer.lat",
-      image: "/images/projects/somer-landing.webp",
-      github: "https://github.com/raymond1242/somer-web",
-      technologies: ["React", "TypeScript", "Django", "PostgreSQL"],
-    },
-    {
       name: "Collyn",
-      subtitle: "Order Management System",
-      description: "An intuitive order management platform designed to streamline the ordering process and improve customer experience for small businesses.",
+      subtitle: "Order Management SaaS",
+      description: "Full-stack order management platform enabling real-time tracking and end-to-end management of the client order lifecycle.",
       link: "https://collyn.vercel.app",
       image: "/images/projects/collyn-landing.webp",
       github: "https://github.com/raymond1242/collyn-web",
+      technologies: ["React", "TypeScript", "Django", "PostgreSQL"],
+    },
+    {
+      name: "Somer",
+      subtitle: "Inventory Management System",
+      description: "Multi-store inventory system for tracking product entries, stock movements, and distribution workflows across locations.",
+      link: "https://www.somer.lat",
+      image: "/images/projects/somer-landing.webp",
+      github: "https://github.com/raymond1242/somer-web",
       technologies: ["React", "TypeScript", "Django", "PostgreSQL"],
     }
   ]
