@@ -41,6 +41,13 @@ html {
   }
 }
 
+/* Mouse clicks on anchors get an eased scroll from SmoothScroll.tsx; with "reduce motion" anchors jump instantly */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* Selection styling */
 ::selection {
   background-color: #171717;
