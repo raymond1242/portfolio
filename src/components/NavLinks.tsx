@@ -15,7 +15,8 @@ const CLICK_LOCK_MS = 1300
 type IndicatorBox = { x: number; y: number; w: number; h: number; visible: boolean; animate: boolean }
 
 // Nav links with a scrollspy: the link of the section in view gets aria-current, and a single indicator slides to it
-// (a dark pill on desktop, an underline on mobile, where pill padding wouldn't fit beside the logo at 360px).
+// (a soft gray pill on desktop, an underline on mobile, where pill padding wouldn't fit beside the logo at 360px).
+// Other links only darken their text on hover, so the gray pill always means "current section".
 // On mobile the nav shares one row with the logo: tighter gaps, and 12px text below 360px, keep it on one line at 320px.
 export default function NavLinks ({ items }: { items: NavItem[] }) {
   // null until mounted, so a page reloaded mid-scroll doesn't flash "Home" as current before hydration
@@ -119,7 +120,7 @@ export default function NavLinks ({ items }: { items: NavItem[] }) {
       {/* Sliding indicators, painted under the links (which are `relative`, so they stack on top) */}
       <span
         aria-hidden="true"
-        className={`pointer-events-none absolute left-0 top-0 hidden lg:block rounded-full bg-neutral-900 ${motion}`}
+        className={`pointer-events-none absolute left-0 top-0 hidden lg:block rounded-full bg-neutral-900/10 ${motion}`}
         style={box ? { transform: `translate(${box.x}px, ${box.y}px)`, width: box.w, height: box.h, opacity } : { opacity: 0 }}
       />
       <span
@@ -132,13 +133,11 @@ export default function NavLinks ({ items }: { items: NavItem[] }) {
           const isCurrent = href === current
           return (
             <li key={href} className={desktopOnly ? "hidden lg:block" : undefined}>
-              {/* Text color changes with the indicator's duration and easing, so the white text never shows on the light
-                  background before the pill arrives; the hover background stays quick */}
               <a
                 href={href}
                 aria-current={isCurrent ? "true" : undefined}
-                className={`relative block lg:px-4 lg:py-2 rounded-full [transition:color_500ms_ease-in-out,background-color_200ms_ease] ${
-                  isCurrent ? "text-neutral-900 lg:text-white" : "text-neutral-500 hover:text-neutral-900 lg:hover:bg-neutral-900/5"
+                className={`relative block lg:px-4 lg:py-2 rounded-full transition-colors duration-200 ${
+                  isCurrent ? "text-neutral-900" : "text-neutral-500 hover:text-neutral-900"
                 }`}
               >
                 {label}
