@@ -27,9 +27,9 @@ export default function Home() {
 
             <div className="mt-4 lg:mt-6 max-w-xl animate-fade-in-up animate-delay-300">
               <p className="text-neutral-600 text-lg leading-relaxed font-light">
-                <span className="text-neutral-900 font-medium">5+ years</span> building backend systems, cloud-native
-                solutions, and data platforms. Skilled in <span className="text-neutral-900 font-medium">scalable microservices</span> with
-                Python and AWS, and <span className="text-neutral-900 font-medium">Snowflake data platforms</span> powered
+                <span className="text-neutral-900 font-medium">5+ years</span> in backend development, cloud-native
+                solutions, and data engineering. From <span className="text-neutral-900 font-medium">scalable microservices</span> with
+                Python and AWS to <span className="text-neutral-900 font-medium">Snowflake data platforms</span> powered
                 by <span className="text-neutral-900 font-medium">AI agents</span>.
               </p>
             </div>
