@@ -28,8 +28,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth scrolling for in-page anchors; offset keeps section titles clear of the floating sticky header
-   (its bottom edge sits at ~106px on mobile, where logo and nav stack, vs ~74px on desktop) */
+/* Smooth scrolling for in-page anchors; the offset keeps section titles clear of the floating sticky header, whose
+   bottom edge sits at ~58px on mobile and ~74px on desktop. With the sections' top padding (py-20 / lg:py-32), both
+   values leave the same gap between the header and the section heading (~86px to its label, ~114px to the h2). */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
