@@ -27,7 +27,6 @@ There is no test framework. To verify a change, run `npm run lint` and `npm run 
 - `next build` rewrites `tsconfig.json` (for example `jsx: react-jsx` and `.next/dev/types`). Keep those changes.
 - Pinned on purpose:
   - **ESLint 9.x, not 10.** The plugins that `eslint-config-next@16` relies on (`eslint-plugin-react`, `jsx-a11y` and `import`) only support up to ESLint 9.
-  - **`@ant-design/icons` 5.x, at 5.6 or later.** Version 5.3 and earlier fails type-checking with React 19. Version 6.x calls `createContext` at module load, which breaks the build in Server Components, and every component here is a Server Component.
   - **`tailwind-animations` at an exact version.** It is midudev's animation plugin; the older `@midudev/tailwind-animations` name is deprecated and only re-exports it. Version 1.x is CSS-only and requires Tailwind 4.
 - Turbopack rejects `.ico`/`.png` assets that are not RGBA. Re-encode one with `ffmpeg -i in.ico -pix_fmt rgba -c:v png -f ico out.ico`.
 - `npm audit` without `--omit=dev` still reports moderate advisories in lint tooling (`typescript-eslint` → `minimatch`/`glob`). None of them ship to the site, and none has a non-breaking fix yet.
@@ -51,7 +50,7 @@ There is no test framework. To verify a change, run `npm run lint` and `npm run 
 - **Sticky header:** `<main>` must use `overflow-x-clip`, never `overflow-x-hidden`. `hidden` turns `<main>` into a scroll container, which silently disables `position: sticky` on the header. It would also break the scroll reveal animations, whose `view()` timeline tracks the nearest scroll container.
 - **Animations** come from [tailwind-animations](https://github.com/midudev/tailwind-animations), imported in [globals.css](src/app/globals.css). They are pure CSS, with no JS and no client components. The hero animates on page load with `animate-fade-in-up` plus a `animate-delay-*` stagger, and the photo uses `animate-blurred-fade-in`. Below the hero, section titles, experience and project cards, education rows and skill columns use the custom `reveal` utility, defined once in `globals.css`. It is a scroll-driven animation (`animation-timeline: view()`), so its progress follows the scroll position, and an element fades back out if it leaves through the bottom of the viewport. Its range (`cover 0% cover 25%`) makes every element fully opaque before its top reaches the upper 60% of the viewport. Tune the effect in that one utility. In a custom utility, `animation-range` and `animation-delay` must come after the `animation` shorthand, which resets them. A global `prefers-reduced-motion: reduce` rule turns every animation off. Only the keyframes in use are emitted to the CSS bundle.
 - **Visual checks:** Google Chrome is installed. Headless `--screenshot` ignores URL hashes, so to test anchor navigation or measure layout, drive Chrome with `playwright-core` (`executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"`) against `npm run start`. Install it in a scratch directory, not in the project.
-- **Icons** come from `@ant-design/icons`. `next.config.mjs` enables `optimizePackageImports` for it, so named imports are fine. Images use `next/image`.
+- **Icons** are inline SVG components in [icons.tsx](src/components/icons.tsx), with no icon library. Their paths come from Ant Design Icons (MIT), which the site used before. They render at `1em` in `currentColor`, so size and color come from `text-*` classes. They are `aria-hidden`, so a link that holds only an icon needs an `aria-label`, as in the footer. To add one, copy its single `<path>` from `@ant-design/icons-svg`. The shared `Icon` helper assumes that set's `64 64 896 896` viewBox. Images use `next/image`.
 
 ## Styling conventions
 
@@ -67,7 +66,7 @@ Styling is Tailwind utility classes only; there are no CSS modules or component 
 
 ## Known quirks
 
-- `@ant-design/icons` injects an unlayered `.anticon { color: inherit }` style. Tailwind 4 utilities live in the `@layer utilities` cascade layer, and unlayered styles always beat layered ones, so a color class on an icon has no effect unless it uses the important modifier: `<CalendarOutlined className="text-blue-500!" />`. Size classes such as `text-lg` work as they are, and icons that should follow their link's color need no class.
+- Tailwind 4 utilities live in the `@layer utilities` cascade layer, and unlayered CSS always beats layered CSS, whatever its specificity. A third-party stylesheet that injects unlayered rules can silently override utilities. The old `@ant-design/icons` did this with `.anticon { color: inherit }`.
 
 - [src/app/fonts.ts](src/app/fonts.ts) exports Roboto, Dosis and Poppins, but nothing imports them. Only Inter (from `layout.tsx`) is used.
 - `sass` is not installed, so use plain CSS or Tailwind and do not add `.scss` files.

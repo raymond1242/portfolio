@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    experimental: {
-        optimizePackageImports: ['@ant-design/icons']
-    }
-};
+const nextConfig = {};
 
 export default nextConfig;

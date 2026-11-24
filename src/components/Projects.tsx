@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { GithubFilled, ArrowRightOutlined } from "@ant-design/icons"
+import { GithubIcon, ArrowRightIcon } from "@/components/icons"
 
 export default function Projects () {
   const projects = [
@@ -77,14 +77,14 @@ export default function Projects () {
                   className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-500 hover:text-blue-600 transition-colors"
                 >
                   <span>View Project</span>
-                  <ArrowRightOutlined className="text-xs" />
+                  <ArrowRightIcon className="text-xs" />
                 </a>
                 <a
                   href={project.github}
                   target="_blank"
                   className="inline-flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors"
                 >
-                  <GithubFilled className="text-lg" />
+                  <GithubIcon className="text-lg" />
                   <span>Source Code</span>
                 </a>
               </div>

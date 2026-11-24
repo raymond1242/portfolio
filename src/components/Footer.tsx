@@ -1,4 +1,4 @@
-import { LinkedinFilled, GithubFilled, XOutlined } from '@ant-design/icons';
+import { LinkedinIcon, GithubIcon, XIcon } from '@/components/icons';
 
 export default function Footer() {
   return (
@@ -16,7 +16,7 @@ export default function Footer() {
             className="p-2 text-neutral-400 hover:text-neutral-900 transition-colors duration-200"
             aria-label="LinkedIn"
           >
-            <LinkedinFilled className="text-3xl" />
+            <LinkedinIcon className="text-3xl" />
           </a>
           <a
             href="https://github.com/raymond1242"
@@ -24,7 +24,7 @@ export default function Footer() {
             className="p-2 text-neutral-400 hover:text-neutral-900 transition-colors duration-200"
             aria-label="GitHub"
           >
-            <GithubFilled className="text-3xl" />
+            <GithubIcon className="text-3xl" />
           </a>
           <a
             href="https://twitter.com/NegronValq49114"
@@ -32,7 +32,7 @@ export default function Footer() {
             className="p-2 text-neutral-400 hover:text-neutral-900 transition-colors duration-200"
             aria-label="Twitter"
           >
-            <XOutlined className="text-3xl" />
+            <XIcon className="text-3xl" />
           </a>
         </div>
 

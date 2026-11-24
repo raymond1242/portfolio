@@ -3,7 +3,7 @@ import Projects from "@/components/Projects";
 import Header from "@/components/Header";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
-import { FileTextOutlined } from "@ant-design/icons";
+import { FileTextIcon } from "@/components/icons";
 import Image from "next/image";
 
 export default function Home() {
@@ -40,7 +40,7 @@ export default function Home() {
                 href="/cv/resume.pdf"
                 download="cv"
               >
-                <FileTextOutlined className="text-lg" />
+                <FileTextIcon className="text-lg" />
                 <span>Download CV</span>
               </a>
               <a
