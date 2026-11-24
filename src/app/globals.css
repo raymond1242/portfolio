@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Tailwind v4 defaults border color to currentcolor (v3 used gray-200): always pair `border*`/`divide*` with a color class */
 
 body {
   background-color: #ffffff;

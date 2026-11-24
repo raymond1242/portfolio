@@ -53,7 +53,7 @@ export default function Home() {
           </div>
 
           {/* Profile Image */}
-          <div className="relative order-1 lg:order-2 flex-shrink-0">
+          <div className="relative order-1 lg:order-2 shrink-0">
             <div className="relative w-64 h-64 lg:w-96 lg:h-96">
               {/* Image container with shadow */}
               <div className="absolute inset-0 overflow-hidden rounded-full shadow-xl shadow-neutral-400/80">

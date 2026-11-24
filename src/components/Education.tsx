@@ -32,7 +32,7 @@ export default function Education () {
               <p className="text-neutral-500 font-light">{item.school}</p>
             </div>
             <div className="flex items-center gap-2 text-sm text-neutral-500">
-              <CalendarOutlined className="text-blue-500" />
+              <CalendarOutlined className="text-blue-500!" />
               <span>{item.date}</span>
             </div>
           </div>

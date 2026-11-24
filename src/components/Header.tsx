@@ -14,7 +14,7 @@ const navItems = [
 // (sections are max-w-6xl/72rem with lg:px-12; pill is 1.5rem narrower per side and has lg:pl-6).
 export default function Header() {
   return (
-    <header className="sticky top-3 lg:top-4 z-20 mt-3 lg:mt-4 mx-auto w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] lg:w-[calc(100%-3rem)] max-w-[69rem] flex flex-col lg:flex-row items-center lg:justify-between gap-1 px-3 py-3 lg:pl-6 lg:pr-2 lg:py-2 rounded-2xl lg:rounded-full border border-neutral-200/60 bg-white/60 backdrop-blur-xl backdrop-saturate-150 shadow-lg shadow-neutral-900/5">
+    <header className="sticky top-3 lg:top-4 z-20 mt-3 lg:mt-4 mx-auto w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] lg:w-[calc(100%-3rem)] max-w-276 flex flex-col lg:flex-row items-center lg:justify-between gap-1 px-3 py-3 lg:pl-6 lg:pr-2 lg:py-2 rounded-2xl lg:rounded-full border border-neutral-200/60 bg-white/60 backdrop-blur-xl backdrop-saturate-150 shadow-lg shadow-neutral-900/5">
       <a href="#home" className="flex gap-3 items-center group">
         <Image src="/images/logo-dark.svg" alt="Logo" width={36} height={36} className="transition-transform duration-300 group-hover:scale-105" />
         <div className="flex flex-col">

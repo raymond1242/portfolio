@@ -89,11 +89,11 @@ export default function Experience () {
 
               <div className="flex flex-col gap-1 text-xs text-neutral-500 mb-4">
                 <div className="flex items-center gap-2">
-                  <CalendarOutlined className="text-blue-500" />
+                  <CalendarOutlined className="text-blue-500!" />
                   <span>{experience.date}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <EnvironmentOutlined className="text-red-500" />
+                  <EnvironmentOutlined className="text-red-500!" />
                   <span>{experience.location}</span>
                 </div>
               </div>
