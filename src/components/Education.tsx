@@ -16,7 +16,7 @@ export default function Education () {
 
   return (
     <section id="education" className="py-20 lg:py-32 px-6 lg:px-12 max-w-6xl mx-auto">
-      <div className="mb-16">
+      <div className="mb-16 reveal">
         <p className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-2">Education</p>
         <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900">Where I&apos;ve studied</h2>
       </div>
@@ -25,7 +25,7 @@ export default function Education () {
         {education.map((item) => (
           <div
             key={item.degree}
-            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 py-6"
+            className="reveal flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 py-6"
           >
             <div>
               <h3 className="text-lg font-bold text-neutral-900">{item.degree}</h3>

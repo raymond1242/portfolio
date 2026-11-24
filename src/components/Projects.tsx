@@ -25,7 +25,7 @@ export default function Projects () {
 
   return (
     <section id="projects" className="py-20 lg:py-32 px-6 lg:px-12 max-w-6xl mx-auto">
-      <div className="mb-16">
+      <div className="mb-16 reveal">
         <p className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-2">Projects</p>
         <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900">Things I&apos;ve built</h2>
       </div>
@@ -34,7 +34,7 @@ export default function Projects () {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="group grid lg:grid-cols-2 gap-8 items-center p-6 lg:p-8 bg-white rounded-2xl border border-neutral-100 hover:border-neutral-300 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-400/80"
+            className="reveal group grid lg:grid-cols-2 gap-8 items-center p-6 lg:p-8 bg-white rounded-2xl border border-neutral-100 hover:border-neutral-300 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-400/80"
           >
             <div className={`relative overflow-hidden rounded-xl ${index % 2 === 1 ? "lg:order-2" : ""}`}>
               <a href={project.link} target="_blank" className="block">

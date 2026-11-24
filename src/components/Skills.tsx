@@ -41,14 +41,14 @@ export default function Skills () {
 
   return (
     <section id="skills" className="py-20 lg:py-32 px-6 lg:px-12 max-w-6xl mx-auto">
-      <div className="mb-16">
+      <div className="mb-16 reveal">
         <p className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-2">Skills</p>
         <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900">Technologies I use</h2>
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
         {skillCategories.map((category, index) => (
-          <div key={index}>
+          <div key={index} className="reveal">
             <h3 className="text-lg font-semibold text-neutral-900 mb-6">{category.title}</h3>
             <div className="space-y-4">
               {category.skills.map((skill, idx) => (

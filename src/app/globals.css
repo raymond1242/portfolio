@@ -1,6 +1,24 @@
 @import "tailwindcss";
+/* Animation utilities by midudev (animate-fade-in-up, animate-delay-*, timeline-view, animate-range-*...) */
+@import "tailwind-animations";
 
 /* Tailwind v4 defaults border color to currentcolor (v3 used gray-200): always pair `border*`/`divide*` with a color class */
+
+/* Scroll reveal: the element fades and slides up while it enters the viewport. Pure CSS (scroll-driven animation):
+   progress follows the scroll position and completes once the element is 25% of the way through the viewport.
+   Browsers without scroll-driven animations just play the fade once on load. */
+@utility reveal {
+  @apply animate-fade-in-up timeline-view animate-range-[cover_0%_cover_25%];
+}
+
+/* Respect the OS "reduce motion" setting: no entrance animations, content is shown as is */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation: none !important;
+  }
+}
 
 body {
   background-color: #ffffff;

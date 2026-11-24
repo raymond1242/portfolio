@@ -54,7 +54,7 @@ export default function Experience () {
 
   return (
     <section id="experience" className="py-20 lg:py-32 px-6 lg:px-12 max-w-6xl mx-auto">
-      <div className="mb-16">
+      <div className="mb-16 reveal">
         <p className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-2">Experience</p>
         <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900">Where I&apos;ve worked</h2>
       </div>
@@ -64,7 +64,7 @@ export default function Experience () {
         {experiences.map((experience) => (
           <div
             key={experience.company}
-            className="group flex flex-col w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-2xl border border-neutral-100 hover:border-neutral-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-neutral-400/80"
+            className="reveal group flex flex-col w-full md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] bg-white rounded-2xl border border-neutral-100 hover:border-neutral-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-neutral-400/80"
           >
             {/* Image at top */}
             <div className="relative w-full h-40 overflow-hidden">

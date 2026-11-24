@@ -15,17 +15,17 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 w-full items-center">
           {/* Text Content */}
           <div className="flex flex-col gap-6 flex-1 order-2 lg:order-1">
-            <p className="text-lg text-neutral-400 font-light tracking-wide">
+            <p className="text-lg text-neutral-400 font-light tracking-wide animate-fade-in-up">
               Hi, I&apos;m
             </p>
-            <h1 className="text-5xl lg:text-7xl font-bold text-neutral-900 tracking-tight">
+            <h1 className="text-5xl lg:text-7xl font-bold text-neutral-900 tracking-tight animate-fade-in-up animate-delay-100">
               Raymond Negron
             </h1>
-            <p className="text-2xl lg:text-3xl font-light text-neutral-500 -mt-2">
+            <p className="text-2xl lg:text-3xl font-light text-neutral-500 -mt-2 animate-fade-in-up animate-delay-200">
               Software Engineer
             </p>
 
-            <div className="mt-4 lg:mt-6 max-w-xl">
+            <div className="mt-4 lg:mt-6 max-w-xl animate-fade-in-up animate-delay-300">
               <p className="text-neutral-600 text-lg leading-relaxed font-light">
                 <span className="text-neutral-900 font-medium">5+ years</span> building backend systems, cloud-native
                 solutions, and data platforms. Skilled in <span className="text-neutral-900 font-medium">scalable microservices</span> with
@@ -34,7 +34,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-6">
+            <div className="flex flex-col sm:flex-row gap-4 mt-6 animate-fade-in-up animate-delay-400">
               <a
                 className="group flex items-center justify-center gap-3 px-8 py-4 bg-neutral-900 hover:bg-neutral-800 text-white rounded-full transition-all duration-300 text-base font-medium"
                 href="/cv/resume.pdf"
@@ -53,7 +53,7 @@ export default function Home() {
           </div>
 
           {/* Profile Image */}
-          <div className="relative order-1 lg:order-2 shrink-0">
+          <div className="relative order-1 lg:order-2 shrink-0 animate-blurred-fade-in">
             <div className="relative w-64 h-64 lg:w-96 lg:h-96">
               {/* Image container with shadow */}
               <div className="absolute inset-0 overflow-hidden rounded-full shadow-xl shadow-neutral-400/80">
